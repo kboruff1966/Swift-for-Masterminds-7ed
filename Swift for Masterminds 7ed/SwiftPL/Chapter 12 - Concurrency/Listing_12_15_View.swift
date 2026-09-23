@@ -7,28 +7,28 @@
 
 import SwiftUI
 
-nonisolated struct ApplicationData {
-
-    @concurrent
-    func loadImage(name: String) async -> String {
-        async let task1 = taskNumber1()
-        async let task2 = taskNumber2()
-
-        return "\(name) - \(await task1) - \(await task2)"
-    }
-
-    func taskNumber1() -> String {
-        sleep(5)
-        return "Task 1"
-    }
-
-    func taskNumber2() -> String {
-        sleep(5)
-        return "Task 2"
-    }
-}
-
+// Listing 12-15: Declaring a structure nonisolated
 struct Listing_12_15_View: View {
+
+    nonisolated struct ApplicationData {
+
+        @concurrent
+        func loadImage(name: String) async -> String {
+
+            async let task1 = taskNumber(1)
+            async let task2 = taskNumber(2)
+
+            return "\(name) - \(await task1) - \(await task2)"
+        }
+
+        func taskNumber(_ number: Int) -> String {
+
+            let duration = UInt32.random(in: 1...5)
+            sleep(duration)
+
+            return "Task \(number): \(duration) seconds"
+        }
+    }
 
     let appData = ApplicationData()
 

@@ -15,16 +15,16 @@ struct Listing_12_2_View: View {
 
             Button("Run Task") {
                 Task {
-                    let imageName = await loadImage(name: "My Image")
-                    print(imageName)
+                    let imageName = try? await loadImage(name: "My Image")
+                    print(imageName ?? "some name")
                 }
             }
         }
         .font(.system(size: 30))
     }
 
-    func loadImage(name: String) async -> String {
-        try? await Task.sleep(for: .seconds(5))
+    func loadImage(name: String) async throws -> String {
+        try await Task.sleep(for: .seconds(5))
         return "Name: \(name)"
     }
 }

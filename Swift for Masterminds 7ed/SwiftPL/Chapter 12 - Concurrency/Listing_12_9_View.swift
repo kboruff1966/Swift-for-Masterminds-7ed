@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-actor ItemData {
-
-    var counter = 0
-
-    func incrementCount() -> String {
-        counter += 1
-        return "Value: \(counter)"
-    }
-}
-
 // Listing 12-9: Protecting data with an actor
 struct Listing_12_9_View: View {
+
+    actor ItemData {
+
+        var counter = 0
+
+        func incrementCount() -> String {
+            counter += 1
+            return "Value: \(counter)"
+        }
+    }
 
     var item = ItemData()
 
