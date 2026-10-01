@@ -36,7 +36,6 @@ struct Listing_3_20_View: View {
         }
         .padding()
     }
-
 }
 
 #Preview {

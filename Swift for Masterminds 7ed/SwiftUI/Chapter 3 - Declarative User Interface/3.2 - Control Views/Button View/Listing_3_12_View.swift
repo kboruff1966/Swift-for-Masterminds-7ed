@@ -23,6 +23,7 @@ struct Listing_3_12_View: View {
             if showInfo {
                 Text("This is the information")
             }
+            
             Spacer()
         }
     }
