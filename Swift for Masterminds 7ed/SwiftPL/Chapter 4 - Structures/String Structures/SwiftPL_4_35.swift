@@ -19,18 +19,11 @@ struct SwiftPL_4_35: View {
 }
 
 #Playground {
-    
-    
-    
-    
-    
-    
-    
-    
 
     func L_4_35() {
 
         let text = "Hello World"
+
         if let first = text.first {
             print("First character is \(first)")  // "First character is H"
         }
@@ -58,8 +51,7 @@ struct SwiftPL_4_35: View {
     //    StringViews()
     //    L_4_35()
     //    L_4_36()
-    
+
     let asterisks = String(repeating: "*", count: 10)
-    
 
 }

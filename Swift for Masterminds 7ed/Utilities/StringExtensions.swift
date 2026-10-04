@@ -144,7 +144,6 @@ extension String {
         }
     }
 
-    let c = Character.randomCharacter(from: 33...126)
-    print(c)
+  
 
 }

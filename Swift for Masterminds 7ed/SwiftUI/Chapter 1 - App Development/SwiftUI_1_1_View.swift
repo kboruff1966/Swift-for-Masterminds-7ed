@@ -9,14 +9,14 @@ import Playgrounds
 import SwiftUI
 
 // Listing 1-1: Xcode template
-struct Listing_1_1_View: View {
+struct SwiftUI_1_1_View: View {
     var body: some View {
         Text( /*@START_MENU_TOKEN@*/"Hello, World!" /*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    Listing_1_1_View()
+    SwiftUI_1_1_View()
 }
 
 #Playground {
