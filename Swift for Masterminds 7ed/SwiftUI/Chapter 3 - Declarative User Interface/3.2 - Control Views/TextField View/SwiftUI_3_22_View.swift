@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SwiftUI_3_22_View: View {
-    
+
     @State private var title: String = "Default Title"
     @State private var titleInput: String = ""
 
@@ -21,7 +21,9 @@ struct SwiftUI_3_22_View: View {
             TextField("Insert Title", text: $titleInput)
                 .padding(10)
                 .background(.gray.opacity(0.2))
-                .textInputAutocapitalization(.words)
+                #if os(iOS)
+                    .textInputAutocapitalization(.words)
+                #endif
             Button("Save") {
                 title = titleInput
                 titleInput = ""

@@ -20,7 +20,9 @@ struct SwiftUI_3_21_View: View {
                 .background(Color.yellow)
             TextField("Insert Title", text: $titleInput)
                 .textFieldStyle(.roundedBorder)
+                #if os(iOS)
                 .textInputAutocapitalization(.words)
+                #endif
             Button("Save") {
                 title = titleInput
                 titleInput = ""

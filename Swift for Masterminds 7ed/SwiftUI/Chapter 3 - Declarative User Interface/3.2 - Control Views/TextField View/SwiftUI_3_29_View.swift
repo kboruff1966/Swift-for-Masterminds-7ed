@@ -26,7 +26,9 @@ struct SwiftUI_3_29_View: View {
             TextField("Insert Number", text: $numberInput)
                 .textFieldStyle(.roundedBorder)
                 .padding(4)
+                #if os(iOS)
                 .keyboardType(.numbersAndPunctuation)
+                #endif
                 .onChange(of: numberInput, initial: false) { old, value in
 
                     print("old: '\(old)'")
