@@ -7,20 +7,7 @@
 
 import SwiftUI
 
-struct HeaderView: View {
 
-    let title: String
-    @Binding var titleInput: String
-
-    var body: some View {
-        VStack {
-            Text(title)
-                .padding(10)
-            TextField("Insert Title", text: $titleInput)
-                .textFieldStyle(.roundedBorder)
-        }
-    }
-}
 
 struct Listing_3_4_View: View {
 
@@ -42,6 +29,21 @@ struct Listing_3_4_View: View {
             Spacer()
         }
         .padding()
+    }
+    
+    struct HeaderView: View {
+        
+        let title: String
+        @Binding var titleInput: String
+        
+        var body: some View {
+            VStack {
+                Text(title)
+                    .padding(10)
+                TextField("Insert Title", text: $titleInput)
+                    .textFieldStyle(.roundedBorder)
+            }
+        }
     }
 }
 

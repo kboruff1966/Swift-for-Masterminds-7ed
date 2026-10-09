@@ -10,7 +10,7 @@ import SwiftUI
 /// Listing 3-64: Getting a reference to the observable object from the environment
 struct SwiftUI_3_64_View: View {
 
-    @Environment(ApplicationData1.self) private var appData
+    @Environment(ApplicationData.self) private var appData
 
     var body: some View {
 
@@ -38,5 +38,5 @@ struct SwiftUI_3_64_View: View {
 
 #Preview {
     SwiftUI_3_64_View()
-        .environment(ApplicationData1.shared)
+        .environment(ApplicationData.shared)
 }

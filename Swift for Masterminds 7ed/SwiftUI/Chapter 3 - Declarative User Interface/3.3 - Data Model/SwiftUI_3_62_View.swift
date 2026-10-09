@@ -10,7 +10,7 @@ import SwiftUI
 /// Listing 3-62: Updating the views manually
 struct SwiftUI_3_62_View: View {
 
-    @State private var appData = ApplicationData1.shared
+    @State private var appData = ApplicationData.shared
     @State private var textID: UUID = UUID()
 
     var body: some View {

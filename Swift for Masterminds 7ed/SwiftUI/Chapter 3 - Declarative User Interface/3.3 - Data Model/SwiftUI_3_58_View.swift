@@ -10,7 +10,7 @@ import SwiftUI
 /// Listing 3-58: Working with an observable object
 struct SwiftUI_3_58_View: View {
 
-    @State private var appData = ApplicationData1.shared
+    @State private var appData = ApplicationData.shared
 
     var body: some View {
         VStack(spacing: 10) {
