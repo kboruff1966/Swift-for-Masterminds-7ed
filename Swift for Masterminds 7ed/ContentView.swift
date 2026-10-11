@@ -10,17 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        SwiftUI_3_24_View()
+        SwiftPL_12_3_View()
     }
 }
 
 #Preview {
     ContentView()
-}
-
-#Playground {
-    _ = 1 + 2
-    
-    let x = Int("   ")
-    
 }

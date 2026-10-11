@@ -30,8 +30,8 @@
 		FA38EA1B305A8F0E00D32B4E = {
 			isa = PBXGroup;
 			children = (
-				FA38EA26305A8F0E00D32B4E /* Swift for Masterminds 7ed */,
 				FA38EA25305A8F0E00D32B4E /* Products */,
+				FA38EA26305A8F0E00D32B4E /* Swift for Masterminds 7ed */,
 			);
 			sourceTree = "<group>";
 		};

@@ -16,65 +16,70 @@ struct SwiftUI_4_35_View: View {
 
     var body: some View {
 
-        VStack {
+        #if !os(macOS)
 
-            List(selection: $selectedRows) {
+            VStack {
 
-                HStack {
+                List(selection: $selectedRows) {
 
-                    Button(editActive ? "Done" : "Edit") {
-                        editActive.toggle()
+                    HStack {
+
+                        Button(editActive ? "Done" : "Edit") {
+                            editActive.toggle()
+                        }
+                        .buttonStyle(.glassProminent)
+
+                        Spacer()
+                        Button(
+                            action: {
+                                removeSelected(selectedRows)
+                                selectedRows.removeAll()
+                            },
+                            label: {
+                                Image(systemName: "trash")
+                            }
+                        )
+                        .disabled(selectedRows.count == 0 ? true : false)
                     }
-                    .buttonStyle(.glassProminent)
+                    .padding()
 
-                    Spacer()
-                    Button(
-                        action: {
+                    Section(header: Text("Statistics")) {
+                        HStack {
+                            Text("Total Books:")
+                            Spacer()
+                            Text("\(appData.userData.count)")
+                        }
+                    }
+
+                    Section(header: Text("My Books")) {
+
+                        ForEach(appData.userData) { book in
+                            CellBook(book: book)
+                        }
+                        .onDelete { indexes in
                             removeSelected(selectedRows)
                             selectedRows.removeAll()
-                        },
-                        label: {
-                            Image(systemName: "trash")
+                            editActive = false
                         }
+                        .onMove { source, destination in
+                            appData.userData.move(
+                                fromOffsets: source,
+                                toOffset: destination
+                            )
+                        }
+                    }
+                }
+                .listStyle(.plain)
+                .environment(
+                    \.editMode,
+                    .constant(
+                        editActive ? EditMode.active : EditMode.inactive
                     )
-                    .disabled(selectedRows.count == 0 ? true : false)
-                }
-                .padding()
-
-                Section(header: Text("Statistics")) {
-                    HStack {
-                        Text("Total Books:")
-                        Spacer()
-                        Text("\(appData.userData.count)")
-                    }
-                }
-
-                Section(header: Text("My Books")) {
-
-                    ForEach(appData.userData) { book in
-                        CellBook(book: book)
-                    }
-                    .onDelete { indexes in
-                        removeSelected(selectedRows)
-                        selectedRows.removeAll()
-                        editActive = false
-                    }
-                    .onMove { source, destination in
-                        appData.userData.move(
-                            fromOffsets: source,
-                            toOffset: destination
-                        )
-                    }
-                }
-            }
-            .listStyle(.plain)
-            .environment(
-                \.editMode,
-                .constant(
-                    editActive ? EditMode.active : EditMode.inactive
                 )
-            )
-        }
+
+            }
+
+        #endif
     }
 
     func removeSelected(_ rowsToRemove: Set<Book.ID>) {

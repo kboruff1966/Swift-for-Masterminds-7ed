@@ -144,6 +144,11 @@ extension String {
         }
     }
 
-  
+    let text = (1...10).map { _ in
+        String.randomWord(length: Int.random(in: (5...10)))
+    }
+    .joined(separator: " ")
+    
+    
 
 }

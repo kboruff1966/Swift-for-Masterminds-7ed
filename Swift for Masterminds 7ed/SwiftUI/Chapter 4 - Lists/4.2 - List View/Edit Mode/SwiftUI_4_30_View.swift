@@ -11,14 +11,16 @@ import SwiftUI
 struct SwiftUI_4_30_View: View {
 
     @Environment(BookData.self) private var appData
-  
+
     var body: some View {
 
         VStack {
 
-            EditButton()
-                .buttonStyle(.glassProminent)
-
+            #if !os(macOS)
+                EditButton()
+                    .buttonStyle(.glassProminent)
+            #endif
+            
             List {
 
                 Section(header: Text("Statistics")) {
@@ -45,7 +47,7 @@ struct SwiftUI_4_30_View: View {
                     }
                 }
             }
-//            .listStyle(.plain)
+            //            .listStyle(.plain)
         }
     }
 }

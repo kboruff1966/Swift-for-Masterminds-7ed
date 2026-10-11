@@ -20,8 +20,12 @@ struct SwiftUI_4_34_View: View {
             List(selection: $selectedRows) {
 
                 HStack {
-                    EditButton()
-                        .buttonStyle(.glassProminent)
+
+                    #if !os(macOS)
+                        EditButton()
+                            .buttonStyle(.glassProminent)
+                    #endif
+
                     Spacer()
                     Button(
                         action: {
@@ -64,14 +68,14 @@ struct SwiftUI_4_34_View: View {
     }
 
     func removeSelected() {
-        
+
         // Convert selected IDs to indices
         let indices = selectedRows.compactMap { id in
             appData.userData.firstIndex(where: { $0.id == id })
         }
-        
+
         let indexSet = IndexSet(indices)
-        
+
         appData.userData.remove(atOffsets: indexSet)
         selectedRows.removeAll()
     }
