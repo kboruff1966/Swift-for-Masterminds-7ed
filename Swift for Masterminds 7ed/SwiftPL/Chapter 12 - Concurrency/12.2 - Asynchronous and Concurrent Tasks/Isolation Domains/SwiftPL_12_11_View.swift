@@ -1,14 +1,14 @@
 //
-//  Listing_12_12_View.swift
+//  SwiftPL_12_11_View.swift
 //  Swift for Masterminds 7ed
 //
-//  Created by Keith Boruff on 9/18/26.
+//  Created by Keith Boruff on 10/14/26.
 //
 
 import SwiftUI
 
-// Listing 12-12: Modifying the user interface from a background thread
-struct Listing_12_12_View: View {
+/// Listing 12-11: Modifying the user interface from a background thread
+struct SwiftPL_12_11_View: View {
 
     @State private var message = "Hello, world!"
 
@@ -25,16 +25,16 @@ struct Listing_12_12_View: View {
         .font(.system(size: 30))
     }
 
-    @concurrent
-    func loadImage(name: String) async {
+    @concurrent func loadImage(name: String) async {
         sleep(5)
-        Task { @MainActor in
-            message = "\(name)"
-        }
+        await changeMessage(name: name)
     }
 
+    func changeMessage(name: String) {
+        message = "\(name)"
+    }
 }
 
 #Preview {
-    Listing_12_12_View()
+    SwiftPL_12_11_View()
 }

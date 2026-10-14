@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-nonisolated final class Product: Sendable {
+final class Product: Sendable {
 
     let name: String
- 
+
     init(name: String) {
         self.name = name
     }
@@ -33,7 +33,7 @@ actor ItemData {
 }
 
 // Listing 12-16: Defining a sendable class
-struct Listing_12_16_View: View {
+struct SwiftPL_12_16_View: View {
 
     var item: ItemData = ItemData()
 
@@ -55,5 +55,5 @@ struct Listing_12_16_View: View {
 }
 
 #Preview {
-    Listing_12_16_View()
+    SwiftPL_12_16_View()
 }

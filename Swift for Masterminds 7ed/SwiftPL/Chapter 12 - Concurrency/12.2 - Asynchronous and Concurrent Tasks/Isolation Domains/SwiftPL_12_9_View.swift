@@ -8,22 +8,35 @@
 import SwiftUI
 
 // Listing 12-9: Protecting data with an actor
-struct Listing_12_9_View: View {
+struct SwiftPL_12_9_View: View {
 
     actor ItemData {
 
-        var counter = 0
+        var counter: Int = 0
+        let maximum = 50
 
         func incrementCount() -> String {
             counter += 1
             return "Value: \(counter)"
         }
+
+        nonisolated func maximumValue() -> String {
+            return "Maximum: \(maximum)"
+        }
     }
 
-    var item = ItemData()
+    var item: ItemData = ItemData()
+    @State private var taskID = 0
 
     var body: some View {
+
+        Text(item.maximumValue())
+
         Button("Run Task") {
+
+            print("Task ID: \(taskID)")
+            taskID += 1
+
             Task {
                 await loadImage(name: "My Image")
             }
@@ -40,5 +53,5 @@ struct Listing_12_9_View: View {
 }
 
 #Preview {
-    Listing_12_9_View()
+    SwiftPL_12_9_View()
 }

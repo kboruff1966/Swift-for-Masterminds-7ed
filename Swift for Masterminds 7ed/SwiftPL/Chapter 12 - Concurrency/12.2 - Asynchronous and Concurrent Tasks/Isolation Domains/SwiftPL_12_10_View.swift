@@ -8,7 +8,7 @@
 import SwiftUI
 
 // Listing 12-10: Defining a non-isolated method
-struct Listing_12_10_View: View {
+struct SwiftPL_12_10_View: View {
 
     actor ItemData {
 
@@ -37,5 +37,5 @@ struct Listing_12_10_View: View {
 }
 
 #Preview {
-    Listing_12_10_View()
+    SwiftPL_12_10_View()
 }

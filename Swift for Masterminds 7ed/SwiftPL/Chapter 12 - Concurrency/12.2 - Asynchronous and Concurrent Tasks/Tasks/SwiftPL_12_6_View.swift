@@ -8,7 +8,7 @@
 import SwiftUI
 
 // Listing 12-6: Cancelling a task
-struct Listing_12_6_View: View {
+struct SwiftPL_12_6_View: View {
     var body: some View {
         VStack {
             Text("Hello, world!")
@@ -42,5 +42,5 @@ struct Listing_12_6_View: View {
 }
 
 #Preview {
-    Listing_12_6_View()
+    SwiftPL_12_6_View()
 }
