@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class Product: Sendable {
+nonisolated final class Product: Sendable {
 
     let name: String
 
@@ -39,6 +39,7 @@ struct SwiftPL_12_16_View: View {
 
     var body: some View {
         Button("Run Task") {
+
             Task {
                 let product = Product(name: "Lamp")
                 await showStock(product: product)

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        SwiftPL_12_3_View()
+        SwiftUI_4_60_View()
     }
 }
 
