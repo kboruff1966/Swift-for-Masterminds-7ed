@@ -22,22 +22,22 @@ struct Listing_5_5_View: View {
 /// Listing 5-5: Using switch with an enumeration type
 #Playground {
 
-    enum Number {
-        case one
-        case two
-        case three
-    }
+//    enum Number {
+//        case one
+//        case two
+//        case three
+//    }
+//
+//    var mynumber = Number.two
 
-    var mynumber = Number.two
-
-    switch mynumber {
-
-    case .one:
-        print("One")
-    case .two:
-        print("Two")
-    case .three:
-        print("Three")
-    }
+//    switch mynumber {
+//
+//    case .one:
+//        print("One")
+//    case .two:
+//        print("Two")
+//    case .three:
+//        print("Three")
+//    }
 
 }

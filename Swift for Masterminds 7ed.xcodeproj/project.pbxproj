@@ -10,9 +10,26 @@
 		FA38EA24305A8F0E00D32B4E /* Swift for Masterminds 7ed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift for Masterminds 7ed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FAB89E263084F6BB009FDCE5 /* Exceptions for "Swift for Masterminds 7ed" folder in "Swift for Masterminds 7ed" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/Search/SwiftUI_5_21_View.swift",
+				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/Search/SwiftUI_5_22_View.swift",
+				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/Search/SwiftUI_5_23_View.swift",
+				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/Search/SwiftUI_5_24_View.swift",
+				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/Search/SwiftUI_5_26_View.swift",
+			);
+			target = FA38EA23305A8F0E00D32B4E /* Swift for Masterminds 7ed */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FA38EA26305A8F0E00D32B4E /* Swift for Masterminds 7ed */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FAB89E263084F6BB009FDCE5 /* Exceptions for "Swift for Masterminds 7ed" folder in "Swift for Masterminds 7ed" target */,
+			);
 			path = "Swift for Masterminds 7ed";
 			sourceTree = "<group>";
 		};

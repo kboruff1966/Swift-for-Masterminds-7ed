@@ -24,6 +24,9 @@ struct Book: Identifiable, Hashable {
 
 @Observable
 class BookData {
+    
+    var viewPath = NavigationPath()
+    var selectedBook: Book? = nil
 
     private init() {}
 
