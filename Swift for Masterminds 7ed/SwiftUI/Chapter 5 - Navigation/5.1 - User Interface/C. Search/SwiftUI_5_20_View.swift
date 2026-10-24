@@ -12,7 +12,7 @@ struct SwiftUI_5_20_View: View {
 
     @Environment(BookDataWithFilter.self) private var appData
     @State private var searchTerm: String = ""
-    
+
     @FocusState private var isFocused: Bool
 
     var body: some View {
@@ -30,7 +30,6 @@ struct SwiftUI_5_20_View: View {
         }
         .searchable(
             text: $searchTerm,
-            placement: .automatic,
             prompt: Text("Insert title")
         )
         .searchFocused($isFocused)

@@ -1,27 +1,27 @@
 //
-//  SwiftUI_5_33_View.swift
+//  SwiftUI_5_34_View.swift
 //  Swift for Masterminds 7ed
 //
-//  Created by Keith Boruff on 10/20/26.
+//  Created by Keith Boruff on 10/21/26.
 //
 
 import SwiftUI
 
-/// Listing 5-33: Using custom navigation
-struct SwiftUI_5_33_View: View {
+/// Listing 5-34: Controlling the navigation path from the initial view
+struct SwiftUI_5_34_View: View {
 
     @Environment(BookData.self) private var appData
-    @State private var viewPath = NavigationPath()
 
     var body: some View {
 
-        NavigationStack(path: $viewPath) {
+        @Bindable var appData = appData
+
+        NavigationStack(path: $appData.viewPath) {
             List(appData.userData) { book in
                 NavigationLink(
                     value: book,
                     label: { CellBook(book: book) }
                 )
-
             }
             .navigationTitle(Text("Books"))
             .toolbarTitleDisplayMode(.inline)
@@ -36,24 +36,24 @@ struct SwiftUI_5_33_View: View {
             .navigationDestination(
                 for: Book.self,
                 destination: { book in
-                    DetailView2(viewPath: $viewPath, book: book)
+                    DetailView3(book: book)
                 }
             )
             .navigationDestination(
                 for: String.self,
                 destination: { viewID in
                     if viewID == "Settings View" {
-                        SettingsView2(viewPath: $viewPath)
+                        SettingsView3()
+                    } else if viewID == "Picture View" {
+                        PictureView()
                     }
                 }
             )
-
         }
-
     }
 }
 
 #Preview {
-    SwiftUI_5_33_View()
+    SwiftUI_5_34_View()
         .environment(BookData.shared)
 }

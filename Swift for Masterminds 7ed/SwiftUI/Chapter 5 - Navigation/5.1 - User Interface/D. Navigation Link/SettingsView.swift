@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
 
-    @State private var showPictures: Bool = true
+    @State private var showPictures: Bool = false
     @State private var showYear: Bool = true
 
     @Environment(\.dismiss) var dismiss
@@ -21,15 +21,15 @@ struct SettingsView: View {
         }
         .navigationTitle("Settings")
 
-        /// Listing 5-30: Creating a custom back button
-        //        .navigationBarBackButtonHidden(true)
-        //        .toolbar {
-        //            ToolbarItem(placement: .topBarLeading) {
-        //                Button("Back") {
-        //                    dismiss()
-        //                }
-        //            }
-        //        }
+        /// Listing 5-27: Creating a custom back button
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button("Back") {
+                    dismiss()
+                }
+            }
+        }
     }
 }
 

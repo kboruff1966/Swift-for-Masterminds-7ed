@@ -20,7 +20,6 @@ struct DetailView2: View {
             Image(book.cover)
                 .resizable()
                 .scaledToFit()
-//                .frame(width: 100)
             Spacer()
         }
         .padding()

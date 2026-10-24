@@ -7,20 +7,18 @@
 
 import SwiftUI
 
+enum CartViewVariation {
+    case Listing_5_10
+    case Listing_5_11
+    //    case Listing_5_12
+}
+
 /// Listing 5-10: Changing the visibility priority of a toolbar item
 struct SwiftUI_5_10_View: View {
 
     @Environment(BookData.self) private var appData
 
-    /// The top bar placements only exist on iOS and visionOS, so macOS
-    /// uses the primary action placement instead.
-    private var shopPlacement: ToolbarItemPlacement {
-        #if os(macOS)
-        .primaryAction
-        #else
-        .topBarPinnedTrailing
-        #endif
-    }
+    let cartVariation = CartViewVariation.Listing_5_10
 
     var body: some View {
         NavigationStack {
@@ -62,14 +60,30 @@ struct SwiftUI_5_10_View: View {
                     )
                 }
 
-                ToolbarItem(placement: shopPlacement) {
-                    Button(
-                        "Shop",
-                        systemImage: "cart",
-                        action: { print("Shop") }
-                    )
+                switch cartVariation {
+                case .Listing_5_10:
+                    ToolbarItem {
+                        Button(
+                            "Shop",
+                            systemImage: "cart",
+                            action: { print("Shop") }
+                        )
+                    }
+                    .visibilityPriority(.high)
+
+                /// Listing 5-11: Displaying a toolbar item on the trailing side
+                case .Listing_5_11:
+                    ToolbarItem(placement: .topBarPinnedTrailing) {
+                        Button(
+                            "Shop",
+                            systemImage: "cart",
+                            action: { print("Shop") }
+                        )
+                    }
+                    .visibilityPriority(.high)
+
                 }
-                .visibilityPriority(.high)
+
             }
         }
     }

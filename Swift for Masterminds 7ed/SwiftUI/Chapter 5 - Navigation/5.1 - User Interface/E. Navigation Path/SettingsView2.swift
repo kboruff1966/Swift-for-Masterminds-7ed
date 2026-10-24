@@ -17,11 +17,11 @@ struct SettingsView2: View {
             Spacer()
         }
         .padding()
-            .navigationBarBackButtonHidden(true).toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button("Back") { viewPath.removeLast() }
-                }
+        .navigationBarBackButtonHidden(true).toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button("Back") { viewPath.removeLast() }
             }
+        }
     }
 }
 

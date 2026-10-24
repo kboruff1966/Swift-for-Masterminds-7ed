@@ -19,7 +19,9 @@ struct SettingsView3: View {
         .padding()
         .navigationBarBackButtonHidden(true).toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Button("Back") { appData.viewPath.removeLast() }
+                Button("Back") {
+                    appData.viewPath.removeLast()
+                }
             }
         }
     }

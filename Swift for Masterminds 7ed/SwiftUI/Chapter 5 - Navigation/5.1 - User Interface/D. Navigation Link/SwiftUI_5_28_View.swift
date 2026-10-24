@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Listing 5-31: Selecting rows with a navigation link
-struct SwiftUI_5_31_View: View {
+struct SwiftUI_5_28_View: View {
 
     @Environment(BookData.self) private var appData
 
@@ -26,6 +26,6 @@ struct SwiftUI_5_31_View: View {
 }
 
 #Preview {
-    SwiftUI_5_31_View()
+    SwiftUI_5_28_View()
         .environment(BookData.shared)
 }

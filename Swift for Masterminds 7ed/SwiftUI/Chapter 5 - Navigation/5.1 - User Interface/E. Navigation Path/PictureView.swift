@@ -22,10 +22,14 @@ struct PictureView: View {
         .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Button("Back") { appData.viewPath.removeLast() }
+                Button("Back to List") {
+                    appData.viewPath = NavigationPath()
+                }
             }
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Back to List") { appData.viewPath = NavigationPath() }
+                Button("Back") {
+                    appData.viewPath.removeLast()
+                }
             }
         }
     }

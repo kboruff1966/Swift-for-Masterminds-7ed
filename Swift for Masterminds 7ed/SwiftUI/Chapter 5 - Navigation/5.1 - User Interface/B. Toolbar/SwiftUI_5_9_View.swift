@@ -21,20 +21,16 @@ struct SwiftUI_5_9_View: View {
             .toolbar {
                 Menu(
                     content: {
-                        Group {
-                            Button("Option 1", systemImage: "pencil.circle") {
-                                print("Option 1")
-                            }
-                            Menu("Select") {
-                                Button("Option A") { print("Option A") }
-                                Button("Option B") { print("Option B") }
-                            }
-                            Button("Option 3", systemImage: "folder") {
-                                print("Option 3")
-                            }
+                        Button("Option 1", systemImage: "pencil.circle") {
+                            print("Option 1")
                         }
-                        .labelStyle(.titleAndIcon)
-
+                        Menu("Select") {
+                            Button("Option A") { print("Option A") }
+                            Button("Option B") { print("Option B") }
+                        }
+                        Button("Option 3", systemImage: "folder") {
+                            print("Option 3")
+                        }
                     },
                     label: {
                         Image(systemName: "filemenu.and.selection")

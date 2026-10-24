@@ -14,11 +14,10 @@
 		FAB89E263084F6BB009FDCE5 /* Exceptions for "Swift for Masterminds 7ed" folder in "Swift for Masterminds 7ed" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/Search/SwiftUI_5_21_View.swift",
-				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/Search/SwiftUI_5_22_View.swift",
-				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/Search/SwiftUI_5_23_View.swift",
-				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/Search/SwiftUI_5_24_View.swift",
-				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/Search/SwiftUI_5_26_View.swift",
+				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/C. Search/SwiftUI_5_22_View.swift",
+				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/C. Search/SwiftUI_5_23_View.swift",
+				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/C. Search/SwiftUI_5_24_View.swift",
+				"SwiftUI/Chapter 5 - Navigation/5.1 - User Interface/C. Search/SwiftUI_5_26_View.swift",
 			);
 			target = FA38EA23305A8F0E00D32B4E /* Swift for Masterminds 7ed */;
 		};

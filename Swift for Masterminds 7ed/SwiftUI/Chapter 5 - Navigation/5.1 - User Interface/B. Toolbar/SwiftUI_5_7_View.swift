@@ -30,14 +30,9 @@ struct SwiftUI_5_7_View: View {
                 }
                 ToolbarItemGroup(placement: .secondaryAction) {
                     Button(
-                        "Save",
-                        systemImage: "folder",
-                        action: { print("Saving...") }
-                    )
-                    Button(
-                        "Delete",
-                        systemImage: "trash.fill",
-                        action: { print("Deleting...") }
+                        "Sort Books",
+                        systemImage: "arrow.up.arrow.down",
+                        action: { print("Sorting Books...") }
                     )
                 }
             }
