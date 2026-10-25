@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Token: Identifiable, Equatable {
+struct AuthorToken: Identifiable, Equatable {
     let id = UUID()
     let name: String
 }
@@ -16,8 +16,9 @@ struct Token: Identifiable, Equatable {
 struct SwiftUI_5_26_View: View {
 
     @Environment(BookDataWithFilter.self) private var appData
+    
     @State private var searchTerm: String = ""
-    @State private var searchTokens: [Token] = []
+    @State private var searchTokens: [AuthorToken] = []
 
     var body: some View {
 
@@ -35,7 +36,7 @@ struct SwiftUI_5_26_View: View {
                     content: {
                         ForEach(authors, id: \.self) { author in
                             Button(author) {
-                                let token = Token(name: author)
+                                let token = AuthorToken(name: author)
                                 searchTokens = [token]
                             }
                         }

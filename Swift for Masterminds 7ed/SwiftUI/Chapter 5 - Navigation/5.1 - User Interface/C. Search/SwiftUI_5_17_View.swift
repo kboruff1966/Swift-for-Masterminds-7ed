@@ -24,11 +24,7 @@ struct SwiftUI_5_17_View: View {
     @State private var searchTerm: String = ""
 
     /// The variation to display. Set it when creating the view.
-    let searchStyle: SearchStyle
-
-    init(searchStyle: SearchStyle = .standard) {
-        self.searchStyle = searchStyle
-    }
+    let searchStyle: SearchStyle = .minimized
 
     var body: some View {
         NavigationStack {
@@ -47,7 +43,7 @@ struct SwiftUI_5_17_View: View {
 
 /// Applies the search bar variation selected by the view.
 private struct SearchModifier: ViewModifier {
-    
+
     @Binding var text: String
     let style: SwiftUI_5_17_View.SearchStyle
 
@@ -73,6 +69,6 @@ private struct SearchModifier: ViewModifier {
 }
 
 #Preview {
-    SwiftUI_5_17_View(searchStyle: .minimized)
+    SwiftUI_5_17_View()
         .environment(BookDataWithFilter.shared)
 }

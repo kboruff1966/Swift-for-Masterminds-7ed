@@ -29,7 +29,11 @@ class BookDataWithFilter {
             search.isEmpty
             ? userData
             : userData.filter { item in
-                let value = scope == .title ? item.title : item.author
+                let value =
+                    switch scope {
+                    case .title: item.title
+                    case .author: item.author
+                    }
                 return value.localizedStandardContains(search)
             }
 

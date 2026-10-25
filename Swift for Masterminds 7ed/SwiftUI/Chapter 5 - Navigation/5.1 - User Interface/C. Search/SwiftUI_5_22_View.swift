@@ -25,11 +25,11 @@ struct SwiftUI_5_22_View: View {
         .searchSuggestions {
             ForEach(appData.filteredItems) { item in
 
-                //                CellBook(book: item)
-                //                    .searchCompletion(item.title)
+//                CellBook(book: item)
+//                    .searchCompletion(item.title)
 
-                Text("\(item.title) - \(item.author)")
-                    .searchCompletion(item.title)
+                                Text("\(item.title) - \(item.author)")
+                                    .searchCompletion(item.title)
             }
         }
         .onChange(of: searchTerm, initial: false) { old, value in

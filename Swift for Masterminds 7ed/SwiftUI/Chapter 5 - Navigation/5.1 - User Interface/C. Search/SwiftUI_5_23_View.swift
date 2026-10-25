@@ -30,6 +30,7 @@ struct SwiftUI_5_23_View: View {
 struct SearchableView: View {
 
     @Environment(BookDataWithFilter.self) private var appData
+
     @Environment(\.isSearching) var isSearching
     @Environment(\.dismissSearch) var dismissSearch
 
