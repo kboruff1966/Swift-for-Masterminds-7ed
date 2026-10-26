@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Listing 4-56: Selecting an initial value
-struct Listing_4_56_View: View {
+struct SwiftUI_4_56_View: View {
 
     @State private var selectedValue: String = "No Value"
     let listCities: [String] = [
@@ -34,5 +34,5 @@ struct Listing_4_56_View: View {
 }
 
 #Preview {
-    Listing_4_56_View()
+    SwiftUI_4_56_View()
 }
