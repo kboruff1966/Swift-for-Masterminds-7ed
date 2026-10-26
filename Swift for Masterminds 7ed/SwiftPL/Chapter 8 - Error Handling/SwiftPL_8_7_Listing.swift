@@ -1,5 +1,5 @@
 //
-//  Listing_8_7_Listing.swift
+//  SwiftPL_8_7_Listing.swift
 //  Swift for Masterminds 7ed
 //
 //  Created by Keith Boruff on 9/19/26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Listing_8_7_Listing: View {
+struct SwiftPL_8_7_Listing: View {
 
     enum Errors: Error {
         case OutOfStock
@@ -55,5 +55,5 @@ struct Listing_8_7_Listing: View {
 }
 
 #Preview {
-    Listing_8_7_Listing()
+    SwiftPL_8_7_Listing()
 }

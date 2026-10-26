@@ -1,5 +1,5 @@
 //
-//  Listing_8_6_View.swift
+//  SwiftPL_8_6_View.swift
 //  Swift for Masterminds 7ed
 //
 //  Created by Keith Boruff on 9/19/26.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 // Listing 8-6: Ignoring the errors
-struct Listing_8_6_View: View {
+struct SwiftPL_8_6_View: View {
 
     enum Errors: Error {
         case OutOfStock
@@ -49,5 +49,5 @@ struct Listing_8_6_View: View {
 }
 
 #Preview {
-    Listing_8_6_View()
+    SwiftPL_8_6_View()
 }
