@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-
-
+/// Listing 3-4: Using @Binding properties
 struct SwiftUI_3_4_View: View {
 
     @State private var title = "Default Title"

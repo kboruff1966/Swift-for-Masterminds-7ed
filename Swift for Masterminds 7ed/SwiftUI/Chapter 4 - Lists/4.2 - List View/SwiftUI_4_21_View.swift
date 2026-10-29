@@ -16,6 +16,8 @@ struct SwiftUI_4_21_View: View {
         List(appData.userData) { book in
             CellBook(book: book)
         }
+        // Listing 4-22: Creating a plain list
+        // .listStyle(.plain)
     }
 }
 

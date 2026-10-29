@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Listing 2-2: Displaying values with a Text view
 struct SwiftUI_2_2_View: View {
     
     let number: Float = 30.87512

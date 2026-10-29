@@ -7,17 +7,13 @@
 
 import SwiftUI
 
+/// Listing 3-2: Defining multiple states
 struct SwiftUI_3_2_View: View {
 
-    @State private var title: String
-    @State private var isValid: Bool
+    @State private var isValid = false
 
-    let validationMsgs = [true: "Valid", false: "Invalid"]
-
-    init() {
-        let isValid = false
-        title = validationMsgs[isValid]!
-        self.isValid = isValid
+    private var title: String {
+        isValid ? "Valid" : "Invalid"
     }
 
     var body: some View {
@@ -27,7 +23,6 @@ struct SwiftUI_3_2_View: View {
             Button(
                 action: {
                     isValid.toggle()
-                    title = validationMsgs[isValid]!
                 },
                 label: {
                     Text("Change Validation")

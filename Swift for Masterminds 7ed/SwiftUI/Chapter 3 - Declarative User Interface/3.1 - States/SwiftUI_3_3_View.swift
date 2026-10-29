@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Listing 3-3: Defining bidirectional binding
 struct SwiftUI_3_3_View: View {
 
     @State private var title = "Default Title"
