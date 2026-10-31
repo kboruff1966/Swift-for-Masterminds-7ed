@@ -8,7 +8,21 @@
 import SwiftUI
 
 enum Scopes {
-    case title, author
+    case title, author, year
+
+    // Partial key path so cases can point at properties of different types
+    private var keyPath: PartialKeyPath<Book> {
+        switch self {
+        case .title: \Book.title
+        case .author: \Book.author
+        case .year: \Book.year
+        }
+    }
+
+    // Returns the text the filter should search for this scope
+    func searchText(for book: Book) -> String {
+        "\(book[keyPath: keyPath])"
+    }
 }
 
 @Observable
@@ -23,18 +37,15 @@ class BookDataWithFilter {
 
     var filteredItems: [Book] = []
 
-    func filterValues(search: String, scope: Scopes) {
+    func filterValues(search: String, scope: Scopes = .title) {
 
         let matches =
             search.isEmpty
             ? userData
-            : userData.filter { item in
-                let value =
-                    switch scope {
-                    case .title: item.title
-                    case .author: item.author
-                    }
-                return value.localizedStandardContains(search)
+            : userData.filter {
+                scope
+                    .searchText(for: $0)
+                    .localizedStandardContains(search)
             }
 
         filteredItems = matches.sorted { $0.title < $1.title }

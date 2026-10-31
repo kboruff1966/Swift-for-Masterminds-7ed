@@ -19,13 +19,15 @@ struct SwiftUI_5_21_View: View {
                 CellBook(book: book)
             }
             .navigationTitle(Text("Books"))
+            .searchable(text: $searchTerm, prompt: Text("Insert title"))
         }
-        .searchable(text: $searchTerm, prompt: Text("Insert title"))
         .onSubmit(of: .search) {
+            print("onSubmit")
             performSearch()
         }
         .onChange(of: searchTerm, initial: false) { old, value in
             if value.isEmpty {
+                print("onChange")
                 performSearch()
             }
         }

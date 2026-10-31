@@ -20,17 +20,17 @@ struct SwiftUI_5_24_View: View {
                 CellBook(book: book)
             }
             .navigationTitle(Text("Books"))
+            .searchable(text: $searchTerm, prompt: Text("Insert title"))
+            .searchScopes(
+                $searchScope,
+                scopes: {
+                    Text("Title")
+                        .tag(Scopes.title)
+                    Text("Author")
+                        .tag(Scopes.author)
+                }
+            )
         }
-        .searchable(text: $searchTerm, prompt: Text("Insert title"))
-        .searchScopes(
-            $searchScope,
-            scopes: {
-                Text("Title")
-                    .tag(Scopes.title)
-                Text("Author")
-                    .tag(Scopes.author)
-            }
-        )
         .onChange(of: searchTerm, initial: false) { _, _ in
             performSearch()
         }

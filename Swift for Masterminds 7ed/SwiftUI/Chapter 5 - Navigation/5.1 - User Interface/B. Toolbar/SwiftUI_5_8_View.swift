@@ -19,18 +19,26 @@ struct SwiftUI_5_8_View: View {
             }
             .navigationTitle(Text("Books"))
             .toolbar {
-
                 Menu(
                     content: {
-                        Button("Option 1", systemImage: "pencil.circle") {
+                        Button(
+                            "Option 1",
+                            systemImage: "pencil.circle"
+                        ) {
                             print("Option 1")
                         }
 
-                        Button("Option 2", systemImage: "trash") {
+                        Button(
+                            "Option 2",
+                            systemImage: "trash"
+                        ) {
                             print("Option 2")
                         }
 
-                        Button("Option 3", systemImage: "folder") {
+                        Button(
+                            "Option 3",
+                            systemImage: "folder"
+                        ) {
                             print("Option 3")
                         }
                     },

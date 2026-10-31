@@ -27,12 +27,13 @@ struct SwiftUI_5_20_View: View {
                     Button("Search") { isFocused = true }
                 }
             }
+            .searchable(
+                text: $searchTerm,
+                prompt: Text("Insert title")
+            )
+            .searchFocused($isFocused)
         }
-        .searchable(
-            text: $searchTerm,
-            prompt: Text("Insert title")
-        )
-        .searchFocused($isFocused)
+
         .onChange(of: searchTerm, initial: false) { old, value in
             let search = value.trimmingCharacters(in: .whitespaces)
             appData.filterValues(search: search, scope: .title)

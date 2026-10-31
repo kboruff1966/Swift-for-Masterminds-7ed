@@ -16,7 +16,7 @@ struct AuthorToken: Identifiable, Equatable {
 struct SwiftUI_5_26_View: View {
 
     @Environment(BookDataWithFilter.self) private var appData
-    
+
     @State private var searchTerm: String = ""
     @State private var searchTokens: [AuthorToken] = []
 
@@ -46,14 +46,14 @@ struct SwiftUI_5_26_View: View {
                     }
                 )
             }
+            .searchable(
+                text: $searchTerm,
+                tokens: $searchTokens,
+                token: { token in
+                    Text(token.name)
+                }
+            )
         }
-        .searchable(
-            text: $searchTerm,
-            tokens: $searchTokens,
-            token: { token in
-                Text(token.name)
-            }
-        )
         .onChange(of: searchTerm, initial: false) { _, _ in
             performSearch()
         }

@@ -18,26 +18,16 @@ struct SwiftUI_5_6_View: View {
                 CellBook(book: book)
             }
             .navigationTitle(Text("Books"))
-            #if os(iOS)
-                .toolbar(.hidden, for: .navigationBar)
-                .toolbar {
-                    ToolbarSpacer(.flexible, placement: .bottomBar)
-                    ToolbarItem(placement: .bottomBar) {
-                        Button("Show") {
-                            print("Show Values")
-                        }
+            .toolbar(.hidden, for: .navigationBar)
+            .toolbar {
+                ToolbarSpacer(.flexible, placement: .bottomBar)
+                ToolbarItem(placement: .bottomBar) {
+                    Button("Show") {
+                        print("Show Values")
                     }
                 }
-            #else
-                // macOS has no bottom bar, so the button goes in the window toolbar.
-                .toolbar {
-                    ToolbarItem(placement: .primaryAction) {
-                        Button("Show") {
-                            print("Show Values")
-                        }
-                    }
-                }
-            #endif
+            }
+
         }
     }
 }

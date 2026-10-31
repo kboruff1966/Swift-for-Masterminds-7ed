@@ -32,61 +32,27 @@ struct SwiftUI_5_12_View: View {
                         systemImage: "envelope",
                         action: { print("Message") }
                     )
-
-                    Button(
-                        "Delete",
-                        systemImage: "trash",
-                        action: { print("Delete") }
-                    )
-
                 }
 
-                // ToolbarOverflowMenu is unavailable in macOS
-                #if !os(macOS)
-                    ToolbarOverflowMenu {
-                        Button(
-                            "Shop",
-                            systemImage: "cart",
-                            action: { print("Shop") }
-                        )
+                ToolbarOverflowMenu {
+                    Button(
+                        "Shop",
+                        systemImage: "cart",
+                        action: { print("Shop") }
+                    )
 
-                        Button(
-                            "Walk",
-                            systemImage: "figure.walk",
-                            action: { print("Walk") }
-                        )
+                    Button(
+                        "Walk",
+                        systemImage: "figure.walk",
+                        action: { print("Walk") }
+                    )
 
-                        Button(
-                            "Beach",
-                            systemImage: "sun.max.fill",
-                            action: { print("Beach") }
-                        )
-
-                    }
-
-                #else
-
-                    ToolbarItemGroup(placement: .secondaryAction) {
-                        Button(
-                            "Shop",
-                            systemImage: "cart",
-                            action: { print("Shop") }
-                        )
-
-                        Button(
-                            "Walk",
-                            systemImage: "figure.walk",
-                            action: { print("Walk") }
-                        )
-
-                        Button(
-                            "Beach",
-                            systemImage: "sun.max.fill",
-                            action: { print("Beach") }
-                        )
-                    }
-
-                #endif
+                    Button(
+                        "Beach",
+                        systemImage: "sun.max.fill",
+                        action: { print("Beach") }
+                    )
+                }
             }
         }
     }

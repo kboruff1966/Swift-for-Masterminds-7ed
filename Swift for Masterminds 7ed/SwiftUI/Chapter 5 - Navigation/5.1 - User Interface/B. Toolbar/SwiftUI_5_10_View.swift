@@ -18,7 +18,7 @@ struct SwiftUI_5_10_View: View {
 
     @Environment(BookData.self) private var appData
 
-    let cartVariation = CartViewVariation.Listing_5_10
+    let cartVariation = CartViewVariation.Listing_5_11
 
     var body: some View {
         NavigationStack {

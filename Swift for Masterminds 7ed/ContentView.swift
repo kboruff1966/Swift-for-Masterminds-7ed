@@ -10,11 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-       SwiftUI_5_51_View()
+        SwiftUI_5_17_View()
+            .environment(BookDataWithFilter.shared)
+
     }
 }
 
 #Preview {
     ContentView()
-       
+        .environment(BookDataWithFilter.shared)
+
 }

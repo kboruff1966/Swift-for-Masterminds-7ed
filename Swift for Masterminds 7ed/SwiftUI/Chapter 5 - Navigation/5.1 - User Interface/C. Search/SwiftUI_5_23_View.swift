@@ -17,8 +17,8 @@ struct SwiftUI_5_23_View: View {
         NavigationStack {
             SearchableView()
                 .navigationTitle(Text("Books"))
+                .searchable(text: $searchTerm, prompt: Text("Insert title"))
         }
-        .searchable(text: $searchTerm, prompt: Text("Insert title"))
         .onChange(of: searchTerm, initial: false) { old, value in
             let search = value.trimmingCharacters(in: .whitespaces)
             appData.filterValues(search: search, scope: .title)

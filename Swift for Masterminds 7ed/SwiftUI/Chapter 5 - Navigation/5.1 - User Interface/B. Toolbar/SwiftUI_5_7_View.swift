@@ -34,6 +34,11 @@ struct SwiftUI_5_7_View: View {
                         systemImage: "arrow.up.arrow.down",
                         action: { print("Sorting Books...") }
                     )
+                    Button(
+                        "Book Info",
+                        systemImage: "info.circle",
+                        action: { print("Book Info") }
+                    )
                 }
             }
         }

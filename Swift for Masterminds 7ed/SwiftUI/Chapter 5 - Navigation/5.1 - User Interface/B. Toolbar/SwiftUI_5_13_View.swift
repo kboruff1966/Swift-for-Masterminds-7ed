@@ -19,18 +19,10 @@ struct SwiftUI_5_13_View: View {
             }
             .navigationTitle(Text("Books"))
             .toolbarTitleDisplayMode(.inlineLarge)
-
-            #if !os(macOS)
-                .toolbarBackgroundVisibility(.visible, for: .navigationBar)
-                .toolbarBackground(.cyan, for: .navigationBar)
-            #endif
-
+            .toolbarBackgroundVisibility(.visible, for: .navigationBar)
+            .toolbarBackground(.cyan, for: .navigationBar)
             .scrollEdgeEffectStyle(.hard, for: .top)
-
-            #if !os(macOS)
-                .toolbarMinimizationBehavior(.onScrollDown, for: .navigationBar)
-            #endif
-
+            .toolbarMinimizationBehavior(.onScrollDown, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .automatic) {
                     Button(

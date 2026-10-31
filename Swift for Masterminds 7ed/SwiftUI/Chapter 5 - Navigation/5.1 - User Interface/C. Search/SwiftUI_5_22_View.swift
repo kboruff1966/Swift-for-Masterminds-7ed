@@ -20,16 +20,12 @@ struct SwiftUI_5_22_View: View {
                 CellBook(book: book)
             }
             .navigationTitle(Text("Books"))
-        }
-        .searchable(text: $searchTerm, prompt: Text("Insert title"))
-        .searchSuggestions {
-            ForEach(appData.filteredItems) { item in
-
-//                CellBook(book: item)
-//                    .searchCompletion(item.title)
-
-                                Text("\(item.title) - \(item.author)")
-                                    .searchCompletion(item.title)
+            .searchable(text: $searchTerm, prompt: Text("Insert title"))
+            .searchSuggestions {
+                ForEach(appData.filteredItems) { item in
+                    Text("\(item.title) - \(item.author)")
+                        .searchCompletion(item.title)
+                }
             }
         }
         .onChange(of: searchTerm, initial: false) { old, value in
