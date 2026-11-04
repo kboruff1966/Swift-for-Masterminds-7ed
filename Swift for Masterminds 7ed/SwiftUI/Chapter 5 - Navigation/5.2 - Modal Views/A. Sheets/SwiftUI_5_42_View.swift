@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Listing 5-42: Displaying a sheet
 struct SwiftUI_5_42_View: View {
 
     @Environment(BookData.self) private var appData
@@ -32,14 +33,14 @@ struct SwiftUI_5_42_View: View {
                 AddBookView()
 
                     // Listing 5-44: Assigning a predefined height
-                    // .presentationDetents([.height(250)])
+                    .presentationDetents([.height(250)])
 
                     // Listing 5-45: Assigning a custom background
-                    // .presentationBackground(.thinMaterial)
+                    .presentationBackground(.thinMaterial)
 
-                    // Listing 5-46: Declaring the size of the sheet
-                    .frame(width: 350, height: 250)
-                    .presentationSizing(.fitted)
+                // Listing 5-46: Declaring the size of the sheet
+                // .frame(width: 350, height: 250)
+                // .presentationSizing(.fitted)
 
             }
         }

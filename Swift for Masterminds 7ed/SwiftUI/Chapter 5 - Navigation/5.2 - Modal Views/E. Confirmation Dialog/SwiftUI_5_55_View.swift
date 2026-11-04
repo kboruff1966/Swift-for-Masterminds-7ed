@@ -33,7 +33,9 @@ struct SwiftUI_5_55_View: View {
                     )
                     Button("Cancel", role: .cancel, action: { print("Cancel") })
                 },
-                message: { Text("What do you want to do with the message?") }
+                message: {
+                    Text("What do you want to do with the message?")
+                }
             )
             Spacer()
         }

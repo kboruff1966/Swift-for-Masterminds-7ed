@@ -13,6 +13,7 @@ struct CellBook: View {
 
     var body: some View {
         HStack(alignment: .top) {
+            
             Image(book.cover)
                 .resizable()
                 .scaledToFit()
@@ -26,14 +27,13 @@ struct CellBook: View {
                 Spacer()
             }
             .padding(.top, 5)
+            
             Spacer()
         }
     }
 }
 
 #Preview {
-    
     @Previewable @State var book: Book = BookData.shared.userData.first!
-    
     CellBook(book: book)
 }

@@ -25,7 +25,10 @@ struct SwiftUI_5_31_View: View {
     }
 }
 
+
+
 #Preview {
     SwiftUI_5_31_View()
         .environment(BookData.shared)
 }
+

@@ -28,6 +28,9 @@ enum Scopes {
 @Observable
 class BookDataWithFilter {
 
+    var showPictures = true
+    var showYear = true
+
     @ObservationIgnored
     var userData: [Book] {
         didSet {

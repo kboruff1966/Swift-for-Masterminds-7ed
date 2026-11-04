@@ -2,17 +2,17 @@
 //  SettingsView.swift
 //  Swift for Masterminds 7ed
 //
-//  Created by Keith Boruff on 10/19/26.
+//  Created by Keith Boruff on 11/3/26.
 //
 
 import SwiftUI
 
 struct SettingsView: View {
 
-    @State private var showPictures: Bool = false
-    @State private var showYear: Bool = true
-
     @Environment(\.dismiss) var dismiss
+
+    @State private var showPictures = true
+    @State private var showYear = true
 
     var body: some View {
         Form {
@@ -20,8 +20,6 @@ struct SettingsView: View {
             Toggle("Show Year", isOn: $showYear)
         }
         .navigationTitle("Settings")
-
-        /// Listing 5-27: Creating a custom back button
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
@@ -34,5 +32,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    NavigationStack { SettingsView() }
+    SettingsView()
 }

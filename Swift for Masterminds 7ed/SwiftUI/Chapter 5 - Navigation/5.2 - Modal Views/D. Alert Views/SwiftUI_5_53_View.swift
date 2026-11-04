@@ -21,38 +21,36 @@ struct SwiftUI_5_53_View: View {
             HStack {
                 Spacer()
                 Button("Save") {
-                    print("Open Alert is: \(openAlert)")
                     openAlert = name.isEmpty
-                    print("Open Alert is now: \(openAlert)")
                 }
             }
             Spacer()
         }
         .padding()
-//        .alert(
-//            "Error",
-//            isPresented: $openAlert,
-//            actions: {
-//                Button("Cancel", role: .cancel, action: {})
-//            },
-//            message: { Text("Insert your name") }
-//        )
+        //        .alert(
+        //            "Error",
+        //            isPresented: $openAlert,
+        //            actions: {
+        //                Button("Cancel", role: .cancel, action: {})
+        //            },
+        //            message: { Text("Insert your name") }
+        //        )
 
         // Listing 5-54: Defining an Alert view with multiple buttons
-                .alert(
-                    "Error",
-                    isPresented: $openAlert,
-                    actions: {
-                        Button("Cancel", role: .cancel, action: {})
-                        Button("Delete", role: .destructive, action: { name = "" })
-                        Button(
-                            "Save Anyway",
-                            role: .none,
-                            action: { print("Save value") }
-                        )
-                    },
-                    message: { Text("Insert your name") }
+        .alert(
+            "Error",
+            isPresented: $openAlert,
+            actions: {
+                Button("Cancel", role: .cancel, action: {})
+                Button("Delete", role: .destructive, action: { name = "" })
+                Button(
+                    "Save Anyway",
+                    role: .none,
+                    action: { print("Save value") }
                 )
+            },
+            message: { Text("Insert your name") }
+        )
 
     }
 }

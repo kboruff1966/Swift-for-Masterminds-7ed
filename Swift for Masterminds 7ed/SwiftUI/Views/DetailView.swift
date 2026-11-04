@@ -2,12 +2,11 @@
 //  DetailView.swift
 //  Swift for Masterminds 7ed
 //
-//  Created by Keith Boruff on 10/19/26.
+//  Created by Keith Boruff on 11/3/26.
 //
 
 import SwiftUI
 
-/// Listing 5-32: Defining a Detail view
 struct DetailView: View {
 
     let book: Book
