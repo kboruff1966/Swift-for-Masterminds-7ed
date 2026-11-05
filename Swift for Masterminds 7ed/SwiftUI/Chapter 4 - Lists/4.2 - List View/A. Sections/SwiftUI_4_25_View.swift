@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import BookData1
+
 
 /// Listing 4-25: Dividing the content into sections
 struct SwiftUI_4_25_View: View {
@@ -36,7 +38,7 @@ struct SwiftUI_4_25_View: View {
 
     struct CellBook: View {
 
-        let book: Book
+        let book: BookData1.Book
 
         var body: some View {
             HStack(alignment: .top) {

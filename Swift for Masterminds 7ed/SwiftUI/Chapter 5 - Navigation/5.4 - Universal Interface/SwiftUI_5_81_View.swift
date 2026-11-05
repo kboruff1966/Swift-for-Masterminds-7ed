@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import BookData2
 
 /// Listing 5-81: Defining a two-column split view
 struct SwiftUI_5_81_View: View {
 
-    @Environment(BookDataWithFilter.self) private var appData
+    @Environment(BookData.self) private var appData
 
     @State private var selectedBook: Book?
     @State private var visibility: NavigationSplitViewVisibility = .automatic
@@ -40,7 +41,7 @@ struct SwiftUI_5_81_View: View {
 
     struct BooksView: View {
 
-        @Environment(BookDataWithFilter.self) private var appData
+        @Environment(BookData.self) private var appData
         @Binding var selectedBook: Book?
 
         var body: some View {
@@ -78,5 +79,5 @@ struct SwiftUI_5_81_View: View {
 
 #Preview {
     SwiftUI_5_81_View()
-        .environment(BookDataWithFilter.shared)
+        .environment(BookData.shared)
 }

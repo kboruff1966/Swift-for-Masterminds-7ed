@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import BookData1
+import MyLibrary
 
 /// Listing 4-5: Creating a list of views with data from the model
 struct SwiftUI_4_5_View: View {

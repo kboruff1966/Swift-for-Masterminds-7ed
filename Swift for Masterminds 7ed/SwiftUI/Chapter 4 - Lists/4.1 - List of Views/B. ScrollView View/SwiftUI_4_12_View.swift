@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-12: Defining each view as a scroll target
 struct SwiftUI_4_12_View: View {

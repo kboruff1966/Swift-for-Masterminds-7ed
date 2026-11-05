@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NHL
 
 // Listing 12-8: Defining a concurrent task
 struct SwiftPL_12_8_View: View {

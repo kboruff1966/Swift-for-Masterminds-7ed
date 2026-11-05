@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 5-49: Presenting the inspector
 struct SwiftUI_5_49_View: View {

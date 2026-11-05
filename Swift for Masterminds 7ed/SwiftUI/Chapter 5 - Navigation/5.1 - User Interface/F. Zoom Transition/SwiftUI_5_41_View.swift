@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData3
 
 /// Listing 5-38: Opening a view with a zoom transition
 struct SwiftUI_5_41_View: View {
@@ -22,7 +23,7 @@ struct SwiftUI_5_41_View: View {
                 NavigationLink(
                     value: book,
                     label: {
-                        CellBook(book: book)
+                        CellBook3(book: book)
                             .matchedTransitionSource(
                                 id: book.id,
                                 in: zoomBooks

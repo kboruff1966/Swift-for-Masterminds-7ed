@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-20: Adding swipe actions to the rows of a list
 struct SwiftUI_4_20_View: View {

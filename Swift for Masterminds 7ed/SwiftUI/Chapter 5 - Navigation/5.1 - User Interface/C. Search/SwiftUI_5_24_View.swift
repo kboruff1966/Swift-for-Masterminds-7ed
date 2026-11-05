@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import BookData2
 
 /// Listing 5-24: Adding scope buttons
 struct SwiftUI_5_24_View: View {
 
-    @Environment(BookDataWithFilter.self) private var appData
+    @Environment(BookData.self) private var appData
     @State private var searchTerm: String = ""
     @State private var searchScope: Scopes = .title
 
     var body: some View {
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook(book: book)
+                CellBook2(book: book)
             }
             .navigationTitle(Text("Books"))
             .searchable(text: $searchTerm, prompt: Text("Insert title"))
@@ -47,5 +48,5 @@ struct SwiftUI_5_24_View: View {
 
 #Preview {
     SwiftUI_5_24_View()
-        .environment(BookDataWithFilter.shared)
+        .environment(BookData.shared)
 }

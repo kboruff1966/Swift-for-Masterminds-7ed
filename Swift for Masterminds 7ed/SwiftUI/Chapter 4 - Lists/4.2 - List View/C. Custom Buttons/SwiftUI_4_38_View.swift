@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-38: Implementing a custom button to delete the rows
 struct SwiftUI_4_38_View: View {

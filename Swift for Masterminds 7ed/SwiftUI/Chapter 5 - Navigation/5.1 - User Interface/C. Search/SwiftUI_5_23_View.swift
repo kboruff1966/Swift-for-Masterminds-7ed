@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import BookData2
 
 /// Listing 5-23: Cancelling the search programmatically
 struct SwiftUI_5_23_View: View {
 
-    @Environment(BookDataWithFilter.self) private var appData
+    @Environment(BookData.self) private var appData
     @State private var searchTerm: String = ""
 
     var body: some View {
@@ -29,14 +30,14 @@ struct SwiftUI_5_23_View: View {
 
 struct SearchableView: View {
 
-    @Environment(BookDataWithFilter.self) private var appData
+    @Environment(BookData.self) private var appData
 
     @Environment(\.isSearching) var isSearching
     @Environment(\.dismissSearch) var dismissSearch
 
     var body: some View {
         List(appData.filteredItems) { book in
-            CellBook(book: book)
+            CellBook2(book: book)
                 .background(.white)
                 .onTapGesture {
                     if isSearching {
@@ -49,5 +50,5 @@ struct SearchableView: View {
 
 #Preview {
     SwiftUI_5_23_View()
-        .environment(BookDataWithFilter.shared)
+        .environment(BookData.shared)
 }

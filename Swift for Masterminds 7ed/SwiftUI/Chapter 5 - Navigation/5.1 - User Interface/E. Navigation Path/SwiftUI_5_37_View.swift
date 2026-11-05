@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData3
 
 /// Listing 5-34: Controlling the navigation path from the initial view
 struct SwiftUI_5_37_View: View {
@@ -20,7 +21,7 @@ struct SwiftUI_5_37_View: View {
             List(appData.userData) { book in
                 NavigationLink(
                     value: book,
-                    label: { CellBook(book: book) }
+                    label: { CellBook3(book: book) }
                 )
             }
             .navigationTitle(Text("Books"))

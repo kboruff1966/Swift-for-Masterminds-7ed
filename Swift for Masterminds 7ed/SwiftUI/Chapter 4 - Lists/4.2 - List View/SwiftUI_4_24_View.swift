@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-24: Mixing static and dynamic content in a list
 struct SwiftUI_4_24_View: View {

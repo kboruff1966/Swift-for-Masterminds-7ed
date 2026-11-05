@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-34: Selecting multiple rows
 struct SwiftUI_4_34_View: View {

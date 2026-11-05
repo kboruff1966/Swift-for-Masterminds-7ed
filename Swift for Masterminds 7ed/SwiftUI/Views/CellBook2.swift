@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import BookData2
 
 struct CellBook2: View {
 
     let book: Book
-    @Environment(BookDataWithFilter.self) private var appData
+    @Environment(BookData.self) private var appData
 
     var body: some View {
+        
         HStack(alignment: .top) {
 
             if appData.showPictures {
@@ -44,9 +46,9 @@ struct CellBook2: View {
 
 #Preview {
 
-    @Previewable @State var book: Book = BookDataWithFilter.shared.userData
+    @Previewable @State var book: Book = BookData.shared.userData
         .first!
 
     CellBook2(book: book)
-        .environment(BookDataWithFilter.shared)
+        .environment(BookData.shared)
 }

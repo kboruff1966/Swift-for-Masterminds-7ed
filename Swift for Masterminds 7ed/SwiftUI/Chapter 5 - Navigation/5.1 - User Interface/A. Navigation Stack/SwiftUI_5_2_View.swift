@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 5-2: Setting the title mode
 struct SwiftUI_5_2_View: View {

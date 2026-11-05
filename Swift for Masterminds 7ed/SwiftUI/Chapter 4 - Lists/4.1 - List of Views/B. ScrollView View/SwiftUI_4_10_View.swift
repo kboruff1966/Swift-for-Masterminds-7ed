@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-10: Scrolling the content page by page
 struct SwiftUI_4_10_View: View {

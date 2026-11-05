@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 5-12: Hiding a toolbar item
 struct SwiftUI_5_12_View: View {

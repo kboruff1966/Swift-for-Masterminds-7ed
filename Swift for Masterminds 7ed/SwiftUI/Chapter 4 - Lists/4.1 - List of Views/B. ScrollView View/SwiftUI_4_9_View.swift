@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-9: Adapting the size of the views to the container
 struct SwiftUI_4_9_View: View {

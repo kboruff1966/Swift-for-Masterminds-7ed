@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import BookData2
 
 /// Listing 5-20: Activating the search field
 struct SwiftUI_5_20_View: View {
 
-    @Environment(BookDataWithFilter.self) private var appData
+    @Environment(BookData.self) private var appData
     @State private var searchTerm: String = ""
 
     @FocusState private var isFocused: Bool
@@ -18,7 +19,7 @@ struct SwiftUI_5_20_View: View {
     var body: some View {
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook(book: book)
+                CellBook2(book: book)
             }
             .navigationTitle(Text("Books"))
             .toolbarTitleDisplayMode(.inlineLarge)
@@ -43,5 +44,5 @@ struct SwiftUI_5_20_View: View {
 
 #Preview {
     SwiftUI_5_20_View()
-        .environment(BookDataWithFilter.shared)
+        .environment(BookData.shared)
 }

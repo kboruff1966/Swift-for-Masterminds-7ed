@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-7: Configuring the scroll view
 struct SwiftUI_4_7_View: View {

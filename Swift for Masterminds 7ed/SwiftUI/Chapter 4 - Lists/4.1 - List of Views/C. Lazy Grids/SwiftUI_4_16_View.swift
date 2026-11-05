@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-16: Creating a grid with a fixed number of items
 struct SwiftUI_4_16_View: View {

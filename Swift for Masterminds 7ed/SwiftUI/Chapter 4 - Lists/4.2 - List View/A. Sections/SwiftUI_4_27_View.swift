@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-27: Configuring the rows from the environment
 struct SwiftUI_4_27_View: View {

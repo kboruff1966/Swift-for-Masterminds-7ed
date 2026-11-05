@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-23: Customizing the rows
 struct SwiftUI_4_23_View: View {

@@ -5,18 +5,17 @@
 //  Created by Keith Boruff on 9/16/26.
 //
 
+import NHL
 import Playgrounds
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        SwiftUI_5_57_View()
-
+        NHLTeamView()
     }
 }
 
 #Preview {
     ContentView()
-      
 
 }

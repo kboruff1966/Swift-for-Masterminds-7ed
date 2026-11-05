@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData2
 
 struct AuthorToken: Identifiable, Equatable {
     let id = UUID()
@@ -15,7 +16,7 @@ struct AuthorToken: Identifiable, Equatable {
 /// Listing 5-26: Adding tokens
 struct SwiftUI_5_26_View: View {
 
-    @Environment(BookDataWithFilter.self) private var appData
+    @Environment(BookData.self) private var appData
 
     @State private var searchTerm: String = ""
     @State private var searchTokens: [AuthorToken] = []
@@ -24,7 +25,7 @@ struct SwiftUI_5_26_View: View {
 
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook(book: book)
+                CellBook2(book: book)
             }
             .navigationTitle(Text("Books"))
             .toolbar {
@@ -74,5 +75,5 @@ struct SwiftUI_5_26_View: View {
 
 #Preview {
     SwiftUI_5_26_View()
-        .environment(BookDataWithFilter.shared)
+        .environment(BookData.shared)
 }

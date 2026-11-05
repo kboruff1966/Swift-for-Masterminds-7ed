@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NHL
 
 /// Listing 12-2: Running an asynchronous task
 struct SwiftPL_12_2_View: View {

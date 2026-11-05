@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NHL
 
 // Listing 12-7: Processing a high demanding task in a background thread
 struct SwiftPL_12_7_View: View {

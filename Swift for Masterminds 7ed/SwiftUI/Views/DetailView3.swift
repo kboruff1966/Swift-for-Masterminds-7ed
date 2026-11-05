@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData3
 
 struct DetailView3: View {
 

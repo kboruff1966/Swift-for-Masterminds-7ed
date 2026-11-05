@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-11: Scrolling two views at a time
 struct SwiftUI_4_11_View: View {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-30: Deleting rows
 struct SwiftUI_4_30_View: View {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NHL
 
 /// Listing 12-1: Running a synchronous task
 struct SwiftPL_12_1_View: View {
@@ -33,6 +34,7 @@ struct SwiftPL_12_1_View: View {
                     loadStartTime = .now
                     
                     image = loadImage(name: nhlImageNames.randomElement()!)
+                 
                 }
                 .buttonStyle(.borderedProminent)
             }
@@ -57,12 +59,12 @@ struct SwiftPL_12_1_View: View {
 
     func loadImage(name: String) -> Image {
 
-        let duration = UInt32.random(in: 3...8)
+        let duration = UInt32.random(in: 3...5)
 
         print("sleep loadImage for \(duration) seconds")
         sleep(duration)
 
-        return Image(name)
+        return Image(name, bundle: nhlBundle)
     }
 
 }

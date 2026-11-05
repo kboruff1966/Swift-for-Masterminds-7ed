@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 5-31: Selecting rows with a navigation link
 struct SwiftUI_5_31_View: View {

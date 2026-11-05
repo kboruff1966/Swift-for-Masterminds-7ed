@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-8: Scrolling the list of views horizontally
 struct SwiftUI_4_8_View: View {

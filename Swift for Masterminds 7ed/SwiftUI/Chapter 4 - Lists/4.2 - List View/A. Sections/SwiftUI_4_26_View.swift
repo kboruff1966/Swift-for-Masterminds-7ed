@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-26: Configuring the section separators
 struct SwiftUI_4_26_View: View {

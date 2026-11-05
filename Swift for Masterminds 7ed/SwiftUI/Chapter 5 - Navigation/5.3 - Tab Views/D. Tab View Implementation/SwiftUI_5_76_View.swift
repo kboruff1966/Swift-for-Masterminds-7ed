@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData2
 
 /// Listing 5-76: Designing a TabView view to manage books
 struct SwiftUI_5_76_View: View {
@@ -27,7 +28,7 @@ struct SwiftUI_5_76_View: View {
 
     struct BooksView: View {
 
-        @Environment(BookDataWithFilter.self) private var appData
+        @Environment(BookData.self) private var appData
 
         var body: some View {
             List(appData.userData) { book in
@@ -38,7 +39,7 @@ struct SwiftUI_5_76_View: View {
 
     struct SettingsView: View {
 
-        @Environment(BookDataWithFilter.self) private var appData
+        @Environment(BookData.self) private var appData
 
         var body: some View {
 
@@ -58,7 +59,7 @@ struct SwiftUI_5_76_View: View {
 
     struct SearchView: View {
 
-        @Environment(BookDataWithFilter.self) private var appData
+        @Environment(BookData.self) private var appData
         @State private var searchBook: String = ""
 
         var body: some View {
@@ -67,7 +68,7 @@ struct SwiftUI_5_76_View: View {
                     .textFieldStyle(.roundedBorder)
                     .padding()
                 List(appData.filteredItems) { book in
-                    CellBook(book: book)
+                    CellBook2(book: book)
                 }
             }
             .onChange(
@@ -82,5 +83,5 @@ struct SwiftUI_5_76_View: View {
 
 #Preview {
     SwiftUI_5_76_View()
-        .environment(BookDataWithFilter.shared)
+        .environment(BookData.shared)
 }

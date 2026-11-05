@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-39: Refreshing the list
 struct SwiftUI_4_39_View: View {

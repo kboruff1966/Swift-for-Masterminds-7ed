@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-32: Moving rows
 struct SwiftUI_4_32_View: View {

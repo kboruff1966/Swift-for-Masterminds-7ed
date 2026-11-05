@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import BookData2
 
 /// Listing 5-17: Displaying a search bar
 struct SwiftUI_5_17_View: View {
 
-    @Environment(BookDataWithFilter.self) private var appData
+    @Environment(BookData.self) private var appData
     @State private var searchTerm: String = ""
 
     var body: some View {
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook(book: book)
+                CellBook2(book: book)
             }
             .navigationTitle(Text("Books"))
             .searchable(
@@ -37,5 +38,5 @@ struct SwiftUI_5_17_View: View {
 
 #Preview {
     SwiftUI_5_17_View()
-        .environment(BookDataWithFilter.shared)
+        .environment(BookData.shared)
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 5-28: Including a navigation link
 struct SwiftUI_5_28_View: View {

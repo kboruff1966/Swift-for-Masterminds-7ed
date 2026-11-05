@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-31: Activating the edit mode
 struct SwiftUI_4_31_View: View {

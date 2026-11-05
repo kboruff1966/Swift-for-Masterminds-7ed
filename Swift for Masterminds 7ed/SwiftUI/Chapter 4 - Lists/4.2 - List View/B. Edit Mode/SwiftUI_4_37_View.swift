@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BookData1
 
 /// Listing 4-37: Storing the selection in the model
 struct SwiftUI_4_37_View: View {
