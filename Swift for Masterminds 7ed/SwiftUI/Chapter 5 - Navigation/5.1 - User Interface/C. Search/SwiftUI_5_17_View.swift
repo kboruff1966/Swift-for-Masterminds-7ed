@@ -17,7 +17,7 @@ struct SwiftUI_5_17_View: View {
     var body: some View {
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook2(book: book)
+                CellBook(book: book)
             }
             .navigationTitle(Text("Books"))
             .searchable(

@@ -19,7 +19,7 @@ struct SwiftUI_5_20_View: View {
     var body: some View {
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook2(book: book)
+                CellBook(book: book)
             }
             .navigationTitle(Text("Books"))
             .toolbarTitleDisplayMode(.inlineLarge)

@@ -25,7 +25,7 @@ struct SwiftUI_5_26_View: View {
 
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook2(book: book)
+                CellBook(book: book)
             }
             .navigationTitle(Text("Books"))
             .toolbar {

@@ -37,7 +37,7 @@ struct SearchableView: View {
 
     var body: some View {
         List(appData.filteredItems) { book in
-            CellBook2(book: book)
+            CellBook(book: book)
                 .background(.white)
                 .onTapGesture {
                     if isSearching {

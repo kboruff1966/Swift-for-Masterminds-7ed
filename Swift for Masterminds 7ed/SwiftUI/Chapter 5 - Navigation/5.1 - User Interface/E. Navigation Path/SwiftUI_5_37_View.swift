@@ -21,7 +21,7 @@ struct SwiftUI_5_37_View: View {
             List(appData.userData) { book in
                 NavigationLink(
                     value: book,
-                    label: { CellBook3(book: book) }
+                    label: { CellBook(book: book) }
                 )
             }
             .navigationTitle(Text("Books"))

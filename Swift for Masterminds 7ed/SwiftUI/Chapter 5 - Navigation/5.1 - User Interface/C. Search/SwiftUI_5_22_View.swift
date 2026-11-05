@@ -18,7 +18,7 @@ struct SwiftUI_5_22_View: View {
 
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook2(book: book)
+                CellBook(book: book)
             }
             .navigationTitle(Text("Books"))
             .searchable(text: $searchTerm, prompt: Text("Insert title"))

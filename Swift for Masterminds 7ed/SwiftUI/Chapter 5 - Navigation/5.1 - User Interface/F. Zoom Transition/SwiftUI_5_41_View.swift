@@ -23,7 +23,7 @@ struct SwiftUI_5_41_View: View {
                 NavigationLink(
                     value: book,
                     label: {
-                        CellBook3(book: book)
+                        CellBook(book: book)
                             .matchedTransitionSource(
                                 id: book.id,
                                 in: zoomBooks

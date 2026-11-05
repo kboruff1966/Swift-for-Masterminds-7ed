@@ -32,7 +32,7 @@ struct SwiftUI_5_76_View: View {
 
         var body: some View {
             List(appData.userData) { book in
-                CellBook2(book: book)
+                CellBook(book: book)
             }
         }
     }
@@ -68,7 +68,7 @@ struct SwiftUI_5_76_View: View {
                     .textFieldStyle(.roundedBorder)
                     .padding()
                 List(appData.filteredItems) { book in
-                    CellBook2(book: book)
+                    CellBook(book: book)
                 }
             }
             .onChange(
