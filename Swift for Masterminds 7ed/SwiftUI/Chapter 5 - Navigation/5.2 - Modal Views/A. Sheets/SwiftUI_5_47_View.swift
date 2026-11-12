@@ -9,14 +9,16 @@ import SwiftUI
 import BookData1
 
 struct SwiftUI_5_47_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
     @State private var showSheet: Bool = false
-    @State private var editItem: Book?
+    @State private var editItem: BookData1.Book?
 
     var body: some View {
         NavigationStack {
-            List(appData.userData) { book in
+            List(appData.books) { book in
                 CellBook(book: book)
                     .background(.white)
                     .onTapGesture {

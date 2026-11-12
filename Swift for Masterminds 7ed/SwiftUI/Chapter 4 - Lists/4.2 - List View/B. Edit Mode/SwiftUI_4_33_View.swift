@@ -10,9 +10,16 @@ import BookData1
 
 /// Listing 4-33: Selecting a row
 struct SwiftUI_4_33_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
     @State private var selectedRow: Book.ID? = nil
+
+    /// True when no row is selected, used to disable the trash button.
+    private var isSelectionEmpty: Bool {
+        selectedRow == nil
+    }
 
     var body: some View {
 
@@ -28,7 +35,7 @@ struct SwiftUI_4_33_View: View {
                             Image(systemName: "trash")
                         }
                     )
-                    .disabled(selectedRow == nil ? true : false)
+                    .disabled(isSelectionEmpty)
                     .buttonStyle(.glass)
                 }
 
@@ -36,20 +43,20 @@ struct SwiftUI_4_33_View: View {
                     HStack {
                         Text("Total Books:")
                         Spacer()
-                        Text("\(appData.userData.count)")
+                        Text("\(appData.books.count)")
                     }
                 }
 
                 Section(header: Text("My Books")) {
 
-                    ForEach(appData.userData) { book in
+                    ForEach(appData.books) { book in
                         CellBook(book: book)
                     }
                     .onDelete { indexes in
-                        appData.userData.remove(atOffsets: indexes)
+                        appData.books.remove(atOffsets: indexes)
                     }
                     .onMove { source, destination in
-                        appData.userData.move(
+                        appData.books.move(
                             fromOffsets: source,
                             toOffset: destination
                         )
@@ -60,7 +67,7 @@ struct SwiftUI_4_33_View: View {
     }
 
     func removeSelected() {
-        appData.userData.removeAll(where: { $0.id == selectedRow })
+        appData.books.removeAll(where: { $0.id == selectedRow })
         selectedRow = nil
     }
 }

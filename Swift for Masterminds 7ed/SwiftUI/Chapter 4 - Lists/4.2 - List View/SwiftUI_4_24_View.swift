@@ -10,6 +10,8 @@ import BookData1
 
 /// Listing 4-24: Mixing static and dynamic content in a list
 struct SwiftUI_4_24_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
@@ -24,7 +26,7 @@ struct SwiftUI_4_24_View: View {
             }
             .frame(height: 50)
 
-            ForEach(appData.userData) { book in
+            ForEach(appData.books) { book in
                 CellBook(book: book)
             }
         }

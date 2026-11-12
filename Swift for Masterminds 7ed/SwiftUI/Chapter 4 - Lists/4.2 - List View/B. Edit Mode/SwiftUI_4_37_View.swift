@@ -5,11 +5,15 @@
 //  Created by Keith Boruff on 10/8/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-37: Storing the selection in the model
 struct SwiftUI_4_37_View: View {
+
+    /// Shadows the app target's own `Book` model within this view (and its nested types)
+    typealias Book = BookData1.Book
+   
 
     @Environment(BookData.self) private var appData
 
@@ -18,7 +22,7 @@ struct SwiftUI_4_37_View: View {
         @Bindable var appData = appData
 
         List {
-            ForEach($appData.userData) { $book in
+            ForEach($appData.books) { $book in
                 CellBook(book: book)
                     .background(.white)
                     .onTapGesture {
@@ -26,7 +30,7 @@ struct SwiftUI_4_37_View: View {
                     }
             }
         }
-//        .listStyle(.plain)
+        //        .listStyle(.plain)
     }
 
     struct CellBook: View {

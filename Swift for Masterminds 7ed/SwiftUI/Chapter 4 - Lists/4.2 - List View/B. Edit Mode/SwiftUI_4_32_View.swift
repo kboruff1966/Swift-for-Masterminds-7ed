@@ -10,6 +10,8 @@ import BookData1
 
 /// Listing 4-32: Moving rows
 struct SwiftUI_4_32_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
@@ -18,14 +20,14 @@ struct SwiftUI_4_32_View: View {
             EditButton()
                 .buttonStyle(.glassProminent)
             List {
-                ForEach(appData.userData) { book in
+                ForEach(appData.books) { book in
                     CellBook(book: book)
                 }
                 .onDelete { indexes in
-                    appData.userData.remove(atOffsets: indexes)
+                    appData.books.remove(atOffsets: indexes)
                 }
                 .onMove { source, destination in
-                    appData.userData.move(
+                    appData.books.move(
                         fromOffsets: source,
                         toOffset: destination
                     )

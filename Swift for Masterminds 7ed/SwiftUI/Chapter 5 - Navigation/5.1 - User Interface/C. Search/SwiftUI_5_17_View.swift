@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 10/17/26.
 //
 
-import SwiftUI
 import BookData2
+import SwiftUI
 
 /// Listing 5-17: Displaying a search bar
 struct SwiftUI_5_17_View: View {
@@ -17,7 +17,7 @@ struct SwiftUI_5_17_View: View {
     var body: some View {
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook(book: book)
+                BookView(book: book)
             }
             .navigationTitle(Text("Books"))
             .searchable(

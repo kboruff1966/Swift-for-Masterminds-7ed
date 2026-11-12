@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 10/18/26.
 //
 
-import SwiftUI
 import BookData2
+import SwiftUI
 
 /// Listing 5-22: Suggesting terms to the user
 struct SwiftUI_5_22_View: View {
@@ -18,7 +18,7 @@ struct SwiftUI_5_22_View: View {
 
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook(book: book)
+                BookView(book: book)
             }
             .navigationTitle(Text("Books"))
             .searchable(text: $searchTerm, prompt: Text("Insert title"))

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MyLibrary
 
 /// Listing 3-64: Getting a reference to the observable object from the environment
 struct SwiftUI_3_64_View: View {

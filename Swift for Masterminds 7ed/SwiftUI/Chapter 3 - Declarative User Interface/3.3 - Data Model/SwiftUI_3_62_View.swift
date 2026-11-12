@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MyLibrary
 
 /// Listing 3-62: Updating the views manually
 struct SwiftUI_3_62_View: View {

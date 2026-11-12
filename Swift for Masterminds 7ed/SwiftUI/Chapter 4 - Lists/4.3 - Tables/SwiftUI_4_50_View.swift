@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MyLibrary
 
 /// Listing 4-50: Defining the content of a column with a Toggle view
 struct SwiftUI_4_50_View: View {

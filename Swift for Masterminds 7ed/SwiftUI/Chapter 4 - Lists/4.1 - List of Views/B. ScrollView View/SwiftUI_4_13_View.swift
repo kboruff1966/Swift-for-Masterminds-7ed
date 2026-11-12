@@ -20,7 +20,7 @@ struct SwiftUI_4_13_View: View {
         VStack {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 0) {
-                    ForEach(appData.userData) { book in
+                    ForEach(appData.books) { book in
                         CellBook(book: book).containerRelativeFrame(
                             .horizontal,
                             count: 2,
@@ -44,7 +44,7 @@ struct SwiftUI_4_13_View: View {
                 initial: true
             ) {
                 if let selected = position.viewID as? UUID {
-                    if let book = appData.userData.first(where: {
+                    if let book = appData.books.first(where: {
                         $0.id == selected
                     }) {
                         title = book.title
@@ -62,7 +62,7 @@ struct SwiftUI_4_13_View: View {
 
     struct CellBook: View {
 
-        let book: Book
+        let book: BookData1.Book
 
         var body: some View {
             VStack {

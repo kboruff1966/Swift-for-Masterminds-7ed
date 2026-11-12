@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 10/17/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 5-7: Defining the buttons intent
 struct SwiftUI_5_7_View: View {
@@ -16,8 +16,8 @@ struct SwiftUI_5_7_View: View {
     var body: some View {
 
         NavigationStack {
-            List(appData.userData) { book in
-                CellBook(book: book)
+            List(appData.books) { book in
+                BookView(book: book)
             }
             .navigationTitle(Text("Books"))
             .toolbarTitleDisplayMode(.inlineLarge)
@@ -27,6 +27,11 @@ struct SwiftUI_5_7_View: View {
                         "Add Book",
                         systemImage: "plus.app",
                         action: { print("Adding Book...") }
+                    )
+                    Button(
+                        "Delete Book",
+                        systemImage: "trash",
+                        action: { print("Delete Book...") }
                     )
                 }
                 ToolbarItemGroup(placement: .secondaryAction) {

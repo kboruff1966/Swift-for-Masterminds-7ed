@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 10/18/26.
 //
 
-import SwiftUI
 import BookData2
+import SwiftUI
 
 /// Listing 5-23: Cancelling the search programmatically
 struct SwiftUI_5_23_View: View {
@@ -37,7 +37,7 @@ struct SearchableView: View {
 
     var body: some View {
         List(appData.filteredItems) { book in
-            CellBook(book: book)
+            BookView(book: book)
                 .background(.white)
                 .onTapGesture {
                     if isSearching {

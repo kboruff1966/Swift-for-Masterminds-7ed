@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MyLibrary
 
 /// Listing 4-45: Defining the rows manually
 struct SwiftUI_4_45_View: View {

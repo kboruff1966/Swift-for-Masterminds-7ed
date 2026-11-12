@@ -10,16 +10,18 @@ import BookData1
 
 /// Listing 4-30: Deleting rows
 struct SwiftUI_4_30_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
     var body: some View {
         List {
-            ForEach(appData.userData) { book in
+            ForEach(appData.books) { book in
                 CellBook(book: book)
             }
             .onDelete { indexes in
-                appData.userData.remove(atOffsets: indexes)
+                appData.books.remove(atOffsets: indexes)
             }
         }
     }

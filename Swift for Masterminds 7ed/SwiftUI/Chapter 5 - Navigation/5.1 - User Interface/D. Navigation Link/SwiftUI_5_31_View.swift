@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 10/19/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 5-31: Selecting rows with a navigation link
 struct SwiftUI_5_31_View: View {
@@ -15,10 +15,10 @@ struct SwiftUI_5_31_View: View {
 
     var body: some View {
         NavigationStack {
-            List(appData.userData) { book in
+            List(appData.books) { book in
                 NavigationLink(
-                    destination: { DetailView(book: book) },
-                    label: { CellBook(book: book) }
+                    destination: { DetailBookView(book: book) },
+                    label: { BookView(book: book) }
                 )
             }
             .navigationTitle(Text("Books"))
@@ -26,10 +26,7 @@ struct SwiftUI_5_31_View: View {
     }
 }
 
-
-
 #Preview {
     SwiftUI_5_31_View()
         .environment(BookData.shared)
 }
-

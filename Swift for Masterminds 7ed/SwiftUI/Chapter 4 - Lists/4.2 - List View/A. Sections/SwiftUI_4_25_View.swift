@@ -5,9 +5,8 @@
 //  Created by Keith Boruff on 10/7/26.
 //
 
-import SwiftUI
 import BookData1
-
+import SwiftUI
 
 /// Listing 4-25: Dividing the content into sections
 struct SwiftUI_4_25_View: View {
@@ -17,19 +16,23 @@ struct SwiftUI_4_25_View: View {
     var body: some View {
 
         List {
-            Section(header: Text("Statistics")) {
+            Section {
                 HStack {
                     Text("Total Books:")
                     Spacer()
-                    Text("\(appData.userData.count)")
+                    Text("\(appData.books.count)")
                 }
+            } header: {
+                Text("Statistics")
             }
             .headerProminence(.increased)
 
-            Section(header: Text("My Books")) {
-                ForEach(appData.userData) { book in
+            Section {
+                ForEach(appData.books) { book in
                     CellBook(book: book)
                 }
+            } header: {
+                Text("My Books")
             }
             .headerProminence(.increased)
         }

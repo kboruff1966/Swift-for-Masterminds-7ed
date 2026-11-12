@@ -16,7 +16,7 @@ struct SwiftUI_4_10_View: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 0) {
-                ForEach(appData.userData) { book in
+                ForEach(appData.books) { book in
                     CellBook(book: book)
                         .containerRelativeFrame(.horizontal)
                 }
@@ -27,7 +27,7 @@ struct SwiftUI_4_10_View: View {
 
     struct CellBook: View {
 
-        let book: Book
+        let book: BookData1.Book
 
         var body: some View {
             VStack {

@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 11/3/26.
 //
 
-import SwiftUI
 import BookData2
+import SwiftUI
 
 /// Listing 5-76: Designing a TabView view to manage books
 struct SwiftUI_5_76_View: View {
@@ -32,7 +32,7 @@ struct SwiftUI_5_76_View: View {
 
         var body: some View {
             List(appData.userData) { book in
-                CellBook(book: book)
+                BookView(book: book)
             }
         }
     }
@@ -68,7 +68,7 @@ struct SwiftUI_5_76_View: View {
                     .textFieldStyle(.roundedBorder)
                     .padding()
                 List(appData.filteredItems) { book in
-                    CellBook(book: book)
+                    BookView(book: book)
                 }
             }
             .onChange(

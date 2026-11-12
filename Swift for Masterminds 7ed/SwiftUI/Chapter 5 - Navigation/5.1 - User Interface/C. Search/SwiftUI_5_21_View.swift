@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 10/18/26.
 //
 
-import SwiftUI
 import BookData2
+import SwiftUI
 
 /// Listing 5-21: Performing the search only when the Return/Done key is pressed
 struct SwiftUI_5_21_View: View {
@@ -17,7 +17,7 @@ struct SwiftUI_5_21_View: View {
     var body: some View {
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook(book: book)
+                BookView(book: book)
             }
             .navigationTitle(Text("Books"))
             .searchable(text: $searchTerm, prompt: Text("Insert title"))

@@ -32,7 +32,7 @@ struct SwiftUI_4_16_View: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: guides) {
-                ForEach(appData.userData) { book in
+                ForEach(appData.books) { book in
                     Image(book.cover)
                         .resizable()
                         .scaledToFit()

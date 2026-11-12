@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MyLibrary
 
 /// Listing 4-44: Creating a table with multiple columns
 struct SwiftUI_4_44_View: View {

@@ -10,6 +10,8 @@ import BookData1
 
 /// Listing 5-49: Presenting the inspector
 struct SwiftUI_5_49_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
     @State private var presentInspector: Bool = false
@@ -20,7 +22,7 @@ struct SwiftUI_5_49_View: View {
 
     var body: some View {
         NavigationStack {
-            List(appData.userData) { book in
+            List(appData.books) { book in
                 CellBook(book: book)
             }
             .navigationTitle(Text("Books"))

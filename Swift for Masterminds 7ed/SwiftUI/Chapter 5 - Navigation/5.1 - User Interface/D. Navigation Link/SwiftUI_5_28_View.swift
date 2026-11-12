@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 10/19/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 5-28: Including a navigation link
 struct SwiftUI_5_28_View: View {
@@ -15,8 +15,8 @@ struct SwiftUI_5_28_View: View {
 
     var body: some View {
         NavigationStack {
-            List(appData.userData) { book in
-                CellBook(book: book)
+            List(appData.books) { book in
+                BookView(book: book)
             }
             .navigationTitle(Text("Books"))
             .toolbar {
@@ -31,11 +31,7 @@ struct SwiftUI_5_28_View: View {
     }
 }
 
-
-
 #Preview {
     SwiftUI_5_28_View()
         .environment(BookData.shared)
 }
-
-

@@ -10,6 +10,8 @@ import BookData1
 
 /// Listing 4-34: Selecting multiple rows
 struct SwiftUI_4_34_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
     @State private var selectedRows: Set<Book.ID> = []
@@ -40,20 +42,20 @@ struct SwiftUI_4_34_View: View {
                     HStack {
                         Text("Total Books:")
                         Spacer()
-                        Text("\(appData.userData.count)")
+                        Text("\(appData.books.count)")
                     }
                 }
 
                 Section(header: Text("My Books")) {
 
-                    ForEach(appData.userData) { book in
+                    ForEach(appData.books) { book in
                         CellBook(book: book)
                     }
                     .onDelete { indexes in
-                        appData.userData.remove(atOffsets: indexes)
+                        appData.books.remove(atOffsets: indexes)
                     }
                     .onMove { source, destination in
-                        appData.userData.move(
+                        appData.books.move(
                             fromOffsets: source,
                             toOffset: destination
                         )
@@ -67,12 +69,12 @@ struct SwiftUI_4_34_View: View {
 
         // Convert selected IDs to indices
         let indices = selectedRows.compactMap { id in
-            appData.userData.firstIndex(where: { $0.id == id })
+            appData.books.firstIndex(where: { $0.id == id })
         }
 
         let indexSet = IndexSet(indices)
 
-        appData.userData.remove(atOffsets: indexSet)
+        appData.books.remove(atOffsets: indexSet)
         selectedRows.removeAll()
     }
 

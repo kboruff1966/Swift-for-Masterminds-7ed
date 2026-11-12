@@ -7,20 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA23482930A1E6E3001311FE /* BookData_Chap7 in Frameworks */ = {isa = PBXBuildFile; productRef = FA23482830A1E6E3001311FE /* BookData_Chap7 */; };
 		FA3E60B6309C85A50054CDC6 /* BookData1 in Frameworks */ = {isa = PBXBuildFile; productRef = FA3E60B5309C85A50054CDC6 /* BookData1 */; };
 		FA3E6377309C88CF0054CDC6 /* BookData2 in Frameworks */ = {isa = PBXBuildFile; productRef = FA3E6376309C88CF0054CDC6 /* BookData2 */; };
-		FAA7CE00309B312A004C013D /* MyLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = FAA7CDFF309B312A004C013D /* MyLibrary */; };
 		FAF225B1309C8D9400D9252C /* BookData3 in Frameworks */ = {isa = PBXBuildFile; productRef = FAF225B0309C8D9400D9252C /* BookData3 */; };
 		FAF22874309C905500D9252C /* NHL in Frameworks */ = {isa = PBXBuildFile; productRef = FAF22873309C905500D9252C /* NHL */; };
+		FAFAAAC730A2525200160457 /* MyLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = FAFAAAC630A2525200160457 /* MyLibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA23482730A1E6E3001311FE /* BookData_Chap7 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BookData_Chap7; path = ../BookData_Chap7; sourceTree = SOURCE_ROOT; };
 		FA38EA24305A8F0E00D32B4E /* Swift for Masterminds 7ed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift for Masterminds 7ed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3E60B4309C85A50054CDC6 /* BookData1 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BookData1; path = ../BookData1; sourceTree = SOURCE_ROOT; };
 		FA3E6375309C88CF0054CDC6 /* BookData2 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BookData2; path = ../BookData2; sourceTree = SOURCE_ROOT; };
 		FAC9A711308FD04200F9816B /* Swift-for-Masterminds-7ed-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Swift-for-Masterminds-7ed-Info.plist"; sourceTree = "<group>"; };
 		FAF225AF309C8D9400D9252C /* BookData3 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BookData3; path = ../BookData3; sourceTree = SOURCE_ROOT; };
 		FAF22872309C905500D9252C /* NHL */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NHL; path = ../NHL; sourceTree = SOURCE_ROOT; };
+		FAFAAAC530A2525200160457 /* MyLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MyLibrary; path = ../MyLibrary; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,11 +38,12 @@
 		FA38EA21305A8F0E00D32B4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
-				FAA7CE00309B312A004C013D /* MyLibrary in Frameworks */,
 				FA3E60B6309C85A50054CDC6 /* BookData1 in Frameworks */,
 				FA3E6377309C88CF0054CDC6 /* BookData2 in Frameworks */,
 				FAF225B1309C8D9400D9252C /* BookData3 in Frameworks */,
 				FAF22874309C905500D9252C /* NHL in Frameworks */,
+				FA23482930A1E6E3001311FE /* BookData_Chap7 in Frameworks */,
+				FAFAAAC730A2525200160457 /* MyLibrary in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -48,10 +52,12 @@
 		FA38EA1B305A8F0E00D32B4E = {
 			isa = PBXGroup;
 			children = (
-				FAF22872309C905500D9252C /* NHL */,
+				FAFAAAC530A2525200160457 /* MyLibrary */,
+				FA23482730A1E6E3001311FE /* BookData_Chap7 */,
 				FA3E60B4309C85A50054CDC6 /* BookData1 */,
 				FA3E6375309C88CF0054CDC6 /* BookData2 */,
 				FAF225AF309C8D9400D9252C /* BookData3 */,
+				FAF22872309C905500D9252C /* NHL */,
 				FA38EA25305A8F0E00D32B4E /* Products */,
 				FA38EA26305A8F0E00D32B4E /* Swift for Masterminds 7ed */,
 				FAC9A711308FD04200F9816B /* Swift-for-Masterminds-7ed-Info.plist */,
@@ -84,11 +90,12 @@
 			);
 			name = "Swift for Masterminds 7ed";
 			packageProductDependencies = (
-				FAA7CDFF309B312A004C013D /* MyLibrary */,
 				FA3E60B5309C85A50054CDC6 /* BookData1 */,
 				FA3E6376309C88CF0054CDC6 /* BookData2 */,
 				FAF225B0309C8D9400D9252C /* BookData3 */,
 				FAF22873309C905500D9252C /* NHL */,
+				FA23482830A1E6E3001311FE /* BookData_Chap7 */,
+				FAFAAAC630A2525200160457 /* MyLibrary */,
 			);
 			productName = "Swift for Masterminds 7ed";
 			productReference = FA38EA24305A8F0E00D32B4E /* Swift for Masterminds 7ed.app */;
@@ -119,7 +126,6 @@
 			mainGroup = FA38EA1B305A8F0E00D32B4E;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				FAA7CDFE309B312A004C013D /* XCLocalSwiftPackageReference "../../MyLibrary" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FA38EA25305A8F0E00D32B4E /* Products */;
@@ -383,14 +389,11 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		FAA7CDFE309B312A004C013D /* XCLocalSwiftPackageReference "../../MyLibrary" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../MyLibrary;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
+		FA23482830A1E6E3001311FE /* BookData_Chap7 */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BookData_Chap7;
+		};
 		FA3E60B5309C85A50054CDC6 /* BookData1 */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BookData1;
@@ -399,10 +402,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = BookData2;
 		};
-		FAA7CDFF309B312A004C013D /* MyLibrary */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MyLibrary;
-		};
 		FAF225B0309C8D9400D9252C /* BookData3 */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BookData3;
@@ -410,6 +409,10 @@
 		FAF22873309C905500D9252C /* NHL */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NHL;
+		};
+		FAFAAAC630A2525200160457 /* MyLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MyLibrary;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

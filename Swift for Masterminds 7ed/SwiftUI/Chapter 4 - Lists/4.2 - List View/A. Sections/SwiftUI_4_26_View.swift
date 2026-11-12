@@ -10,6 +10,8 @@ import BookData1
 
 /// Listing 4-26: Configuring the section separators
 struct SwiftUI_4_26_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
@@ -19,14 +21,14 @@ struct SwiftUI_4_26_View: View {
                 HStack {
                     Text("Total Books:")
                     Spacer()
-                    Text(String(appData.userData.count))
+                    Text(String(appData.books.count))
                 }
             }
             .listSectionSeparator(.hidden, edges: .top)
             .listSectionSeparatorTint(.blue)
 
             Section(header: Text("My Books")) {
-                ForEach(appData.userData) { book in
+                ForEach(appData.books) { book in
                     CellBook(book: book)
                 }
             }

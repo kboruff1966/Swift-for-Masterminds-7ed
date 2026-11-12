@@ -10,11 +10,13 @@ import BookData1
 
 /// Listing 4-23: Customizing the rows
 struct SwiftUI_4_23_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
     var body: some View {
-        List(appData.userData) { book in
+        List(appData.books) { book in
             CellBook(book: book)
                 .listRowInsets(
                     EdgeInsets(

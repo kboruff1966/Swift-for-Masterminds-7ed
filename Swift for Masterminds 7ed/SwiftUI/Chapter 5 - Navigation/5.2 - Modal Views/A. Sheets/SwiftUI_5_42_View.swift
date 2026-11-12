@@ -10,13 +10,15 @@ import BookData1
 
 /// Listing 5-42: Displaying a sheet
 struct SwiftUI_5_42_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
     @State private var showSheet: Bool = false
 
     var body: some View {
         NavigationStack {
-            List(appData.userData) { book in
+            List(appData.books) { book in
                 CellBook(book: book)
             }
             .navigationTitle(Text("Books"))

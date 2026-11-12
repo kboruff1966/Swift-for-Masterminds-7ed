@@ -11,11 +11,14 @@ import BookData1
 /// Listing 4-38: Implementing a custom button to delete the rows
 struct SwiftUI_4_38_View: View {
 
+    /// Shadows the app target's own `Book` model within this view (and its nested types)
+    typealias Book = BookData1.Book
+
     @Environment(BookData.self) private var appData
 
     var body: some View {
         List {
-            ForEach(appData.userData) { book in
+            ForEach(appData.books) { book in
                 CellBook(book: book)
             }
         }
@@ -62,7 +65,7 @@ struct SwiftUI_4_38_View: View {
         }
 
         func removeBook(book: Book) {
-            appData.userData.removeAll(where: { $0.id == book.id })
+            appData.books.removeAll(where: { $0.id == book.id })
         }
     }
 }

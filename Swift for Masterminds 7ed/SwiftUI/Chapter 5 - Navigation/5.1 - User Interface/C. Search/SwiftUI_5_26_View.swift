@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 10/18/26.
 //
 
-import SwiftUI
 import BookData2
+import SwiftUI
 
 struct AuthorToken: Identifiable, Equatable {
     let id = UUID()
@@ -25,7 +25,7 @@ struct SwiftUI_5_26_View: View {
 
         NavigationStack {
             List(appData.filteredItems) { book in
-                CellBook(book: book)
+                BookView(book: book)
             }
             .navigationTitle(Text("Books"))
             .toolbar {

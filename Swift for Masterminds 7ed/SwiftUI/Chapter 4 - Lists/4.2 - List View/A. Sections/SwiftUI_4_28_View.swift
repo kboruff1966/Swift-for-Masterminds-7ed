@@ -5,18 +5,22 @@
 //  Created by Keith Boruff on 10/7/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-28: Providing an ordered list of values
 struct SwiftUI_4_28_View: View {
+
+    /// Shadows the app target's own `Book` model within this view (and its nested types)
+    typealias Book = BookData1.Book
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
     var orderList: [(key: String, value: [Book])] {
 
         let listGroup: [String: [Book]] = Dictionary(
-            grouping: appData.userData,
+            grouping: appData.books,
             by: { value in
                 let index = value.title.startIndex
                 let initial = value.title[index]
@@ -30,10 +34,12 @@ struct SwiftUI_4_28_View: View {
     var body: some View {
         List {
             ForEach(orderList, id: \.key) { section in
-                Section(header: Text(section.key)) {
+                Section {
                     ForEach(section.value) { book in
                         CellBook(book: book)
                     }
+                } header: {
+                    Text(section.key)
                 }
                 .headerProminence(.increased)
                 .sectionIndexLabel(section.key)

@@ -5,18 +5,24 @@
 //  Created by Keith Boruff on 10/8/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-36: Customizing the selection
 struct SwiftUI_4_36_View: View {
+    
+//    typealias CellBook = BookData1.CellBook
+    
+
+    /// Shadows the app target's own `Book` model within this view (and its nested types)
+    typealias Book = BookData1.Book
 
     @Environment(BookData.self) private var appData
     @State private var selectedRow: Book.ID? = nil
 
     var body: some View {
         List {
-            ForEach(appData.userData) { book in
+            ForEach(appData.books) { book in
                 CellBook(selected: $selectedRow, book: book)
                     .background(.white)
                     .onTapGesture {
@@ -27,7 +33,7 @@ struct SwiftUI_4_36_View: View {
                     }
             }
         }
-//        .listStyle(.plain)
+        //        .listStyle(.plain)
     }
 
     struct CellBook: View {

@@ -13,7 +13,7 @@ struct SwiftUI_5_81_View: View {
 
     @Environment(BookData.self) private var appData
 
-    @State private var selectedBook: Book?
+    @State private var selectedBook: BookData2.Book?
     @State private var visibility: NavigationSplitViewVisibility = .automatic
 
     var body: some View {
@@ -42,7 +42,7 @@ struct SwiftUI_5_81_View: View {
     struct BooksView: View {
 
         @Environment(BookData.self) private var appData
-        @Binding var selectedBook: Book?
+        @Binding var selectedBook: BookData2.Book?
 
         var body: some View {
             List(appData.userData, selection: $selectedBook) { book in
@@ -58,7 +58,7 @@ struct SwiftUI_5_81_View: View {
 
     struct DetailView: View {
 
-        let book: Book
+        let book: BookData2.Book
 
         var body: some View {
             VStack {

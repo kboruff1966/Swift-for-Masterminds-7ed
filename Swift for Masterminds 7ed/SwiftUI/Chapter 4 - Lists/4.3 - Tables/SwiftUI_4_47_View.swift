@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MyLibrary
 
 /// Listing 4-47: Sorting only the calories
 struct SwiftUI_4_47_View: View {

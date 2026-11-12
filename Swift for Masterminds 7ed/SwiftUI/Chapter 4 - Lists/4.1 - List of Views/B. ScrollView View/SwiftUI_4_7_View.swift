@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 10/27/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-7: Configuring the scroll view
 struct SwiftUI_4_7_View: View {
@@ -23,7 +23,7 @@ struct SwiftUI_4_7_View: View {
 
             ScrollView {
                 LazyVStack {
-                    ForEach(appData.userData) { book in
+                    ForEach(appData.books) { book in
                         VStack {
                             HStack(alignment: .top) {
                                 Image(book.cover)

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MyLibrary
 
 /// Listing 4-46: Sorting the values by column
 struct SwiftUI_4_46_View: View {

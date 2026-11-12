@@ -7,7 +7,7 @@
 
 import SwiftUI
 import BookData1
-import MyLibrary
+
 
 /// Listing 4-5: Creating a list of views with data from the model
 struct SwiftUI_4_5_View: View {
@@ -16,7 +16,7 @@ struct SwiftUI_4_5_View: View {
 
     var body: some View {
         VStack {
-            ForEach(appData.userData) { book in
+            ForEach(appData.books) { book in
                 VStack {
                     HStack(alignment: .top) {
                         Image(book.cover)

@@ -10,12 +10,14 @@ import BookData1
 
 /// Listing 4-39: Refreshing the list
 struct SwiftUI_4_39_View: View {
+    
+    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
     var body: some View {
         List {
-            ForEach(appData.userData) { book in
+            ForEach(appData.books) { book in
                 CellBook(book: book)
             }
         }

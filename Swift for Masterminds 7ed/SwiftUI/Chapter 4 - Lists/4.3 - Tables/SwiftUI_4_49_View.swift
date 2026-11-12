@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MyLibrary
 
 /// Listing 4-49: Using a context menu to process a row
 struct SwiftUI_4_49_View: View {

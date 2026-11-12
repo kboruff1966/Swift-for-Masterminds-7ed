@@ -5,8 +5,8 @@
 //  Created by Keith Boruff on 10/27/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-6: Creating a scrollable list of views
 struct SwiftUI_4_6_View: View {
@@ -16,13 +16,13 @@ struct SwiftUI_4_6_View: View {
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(appData.userData) { book in
+                ForEach(appData.books) { book in
                     VStack {
                         HStack(alignment: .top) {
-                            Image(book.cover).resizable().scaledToFit().frame(
-                                width: 80,
-                                height: 100
-                            )
+                            Image(book.cover)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 80, height: 100)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(book.title)
                                     .bold()

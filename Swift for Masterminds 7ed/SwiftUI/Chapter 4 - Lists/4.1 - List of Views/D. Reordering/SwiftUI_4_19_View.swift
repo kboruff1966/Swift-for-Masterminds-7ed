@@ -18,7 +18,7 @@ struct SwiftUI_4_19_View: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: guides) {
-                ForEach(appData.userData) { book in
+                ForEach(appData.books) { book in
                     Image(book.cover)
                         .resizable()
                         .scaledToFit()
@@ -30,7 +30,7 @@ struct SwiftUI_4_19_View: View {
                 move: { diff in
 
                     guard
-                        let sourceIndex = appData.userData.firstIndex(
+                        let sourceIndex = appData.books.firstIndex(
                             where: {
                                 $0.id == diff.sources[0]
                             })
@@ -38,21 +38,21 @@ struct SwiftUI_4_19_View: View {
                         return
                     }
 
-                    let element = appData.userData.remove(at: sourceIndex)
+                    let element = appData.books.remove(at: sourceIndex)
 
                     let destinationIndex =
                         switch diff.destination.position {
                         case .end:
-                            appData.userData.endIndex
+                            appData.books.endIndex
                         case .before(let id):
-                            appData.userData.firstIndex(
+                            appData.books.firstIndex(
                                 where: {
                                     $0.id == id
                                 })
                         }
 
                     if let destinationIndex {
-                        appData.userData.insert(element, at: destinationIndex)
+                        appData.books.insert(element, at: destinationIndex)
                     }
                 }
             )

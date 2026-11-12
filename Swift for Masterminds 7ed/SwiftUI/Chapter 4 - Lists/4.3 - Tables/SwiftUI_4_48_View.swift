@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MyLibrary
 
 /// Listing 4-48: Allowing the user to select items in a table
 struct SwiftUI_4_48_View: View {

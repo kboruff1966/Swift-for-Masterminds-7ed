@@ -16,7 +16,7 @@ struct SwiftUI_4_20_View: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading) {
-                ForEach(appData.userData) { book in
+                ForEach(appData.books) { book in
                     HStack {
                         Text(book.title)
                             .padding(8)
@@ -26,7 +26,7 @@ struct SwiftUI_4_20_View: View {
                         Button(
                             role: .destructive,
                             action: {
-                                appData.userData.removeAll(
+                                appData.books.removeAll(
                                     where: { $0.id == book.id })
                             },
                             label: { Image(systemName: "trash") }

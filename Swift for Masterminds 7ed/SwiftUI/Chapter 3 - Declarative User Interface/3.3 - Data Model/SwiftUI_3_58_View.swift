@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MyLibrary
 
 /// Listing 3-58: Working with an observable object
 struct SwiftUI_3_58_View: View {
