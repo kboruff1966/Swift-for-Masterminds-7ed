@@ -11,10 +11,6 @@ import SwiftUI
 /// Listing 4-37: Storing the selection in the model
 struct SwiftUI_4_37_View: View {
 
-    /// Shadows the app target's own `Book` model within this view (and its nested types)
-    typealias Book = BookData1.Book
-   
-
     @Environment(BookData.self) private var appData
 
     var body: some View {

@@ -5,14 +5,11 @@
 //  Created by Keith Boruff on 10/8/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-38: Implementing a custom button to delete the rows
 struct SwiftUI_4_38_View: View {
-
-    /// Shadows the app target's own `Book` model within this view (and its nested types)
-    typealias Book = BookData1.Book
 
     @Environment(BookData.self) private var appData
 

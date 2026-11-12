@@ -5,13 +5,11 @@
 //  Created by Keith Boruff on 10/7/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-33: Selecting a row
 struct SwiftUI_4_33_View: View {
-    
-    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
     @State private var selectedRow: Book.ID? = nil
@@ -50,7 +48,7 @@ struct SwiftUI_4_33_View: View {
                 Section(header: Text("My Books")) {
 
                     ForEach(appData.books) { book in
-                        CellBook(book: book)
+                        BookView(book: book)
                     }
                     .onDelete { indexes in
                         appData.books.remove(atOffsets: indexes)

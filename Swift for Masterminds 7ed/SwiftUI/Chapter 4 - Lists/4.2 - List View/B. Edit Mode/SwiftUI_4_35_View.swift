@@ -5,13 +5,11 @@
 //  Created by Keith Boruff on 10/7/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-35: Customizing the edit mode
 struct SwiftUI_4_35_View: View {
-    
-    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
     @State private var selectedRows: Set<Book.ID> = []
@@ -39,7 +37,7 @@ struct SwiftUI_4_35_View: View {
                     .buttonStyle(.glassProminent)
 
                     Spacer()
-                    
+
                     Button(
                         action: {
                             removeSelected()
@@ -63,7 +61,7 @@ struct SwiftUI_4_35_View: View {
                 Section(header: Text("My Books")) {
 
                     ForEach(appData.books) { book in
-                        CellBook(book: book)
+                        BookView(book: book)
                     }
                     .onDelete { indexes in
                         removeSelected()

@@ -10,9 +10,6 @@ import SwiftUI
 
 /// Listing 4-36: Customizing the selection
 struct SwiftUI_4_36_View: View {
-    
-//    typealias CellBook = BookData1.CellBook
-    
 
     /// Shadows the app target's own `Book` model within this view (and its nested types)
     typealias Book = BookData1.Book

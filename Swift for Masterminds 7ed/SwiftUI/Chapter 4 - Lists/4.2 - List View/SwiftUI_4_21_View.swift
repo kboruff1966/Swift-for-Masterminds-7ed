@@ -5,19 +5,17 @@
 //  Created by Keith Boruff on 10/6/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-21: Creating a list of views with the List view
 struct SwiftUI_4_21_View: View {
-    
-    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
     var body: some View {
         List(appData.books) { book in
-            CellBook(book: book)
+            BookView(book: book)
         }
         // Listing 4-22: Creating a plain list
         // .listStyle(.plain)

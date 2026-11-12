@@ -5,19 +5,17 @@
 //  Created by Keith Boruff on 10/6/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-23: Customizing the rows
 struct SwiftUI_4_23_View: View {
-    
-    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
     var body: some View {
         List(appData.books) { book in
-            CellBook(book: book)
+            BookView(book: book)
                 .listRowInsets(
                     EdgeInsets(
                         top: 0,

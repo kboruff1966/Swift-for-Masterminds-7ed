@@ -5,19 +5,17 @@
 //  Created by Keith Boruff on 10/6/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-24: Mixing static and dynamic content in a list
 struct SwiftUI_4_24_View: View {
-    
-    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
     var body: some View {
         List {
-            
+
             HStack {
                 Image(systemName: "book.circle").font(.largeTitle)
                 Spacer()
@@ -27,7 +25,7 @@ struct SwiftUI_4_24_View: View {
             .frame(height: 50)
 
             ForEach(appData.books) { book in
-                CellBook(book: book)
+                BookView(book: book)
             }
         }
         .listStyle(.plain)
