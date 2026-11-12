@@ -5,13 +5,11 @@
 //  Created by Keith Boruff on 10/26/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 5-49: Presenting the inspector
 struct SwiftUI_5_49_View: View {
-    
-    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
     @State private var presentInspector: Bool = false
@@ -23,7 +21,7 @@ struct SwiftUI_5_49_View: View {
     var body: some View {
         NavigationStack {
             List(appData.books) { book in
-                CellBook(book: book)
+                BookView(book: book)
             }
             .navigationTitle(Text("Books"))
             .toolbarTitleDisplayMode(.inlineLarge)

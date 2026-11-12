@@ -30,7 +30,7 @@ struct SwiftUI_5_26_View: View {
             .navigationTitle(Text("Books"))
             .toolbar {
 
-                let list = appData.userData.map { $0.author }
+                let list = appData.books.map { $0.author }
                 let authors = Set(list).sorted()
 
                 Menu(

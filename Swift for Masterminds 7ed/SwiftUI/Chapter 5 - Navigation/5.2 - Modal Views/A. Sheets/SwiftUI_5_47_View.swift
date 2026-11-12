@@ -5,12 +5,10 @@
 //  Created by Keith Boruff on 10/26/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 struct SwiftUI_5_47_View: View {
-    
-    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
     @State private var showSheet: Bool = false
@@ -19,7 +17,7 @@ struct SwiftUI_5_47_View: View {
     var body: some View {
         NavigationStack {
             List(appData.books) { book in
-                CellBook(book: book)
+                BookView(book: book)
                     .background(.white)
                     .onTapGesture {
                         editItem = book

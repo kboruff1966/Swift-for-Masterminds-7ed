@@ -32,7 +32,7 @@ public class BookData {
     public var showYear = true
 
     @ObservationIgnored
-    public var userData: [Book] {
+    public var books: [Book] {
         didSet {
             filterValues(search: "", scope: .title)
         }
@@ -44,8 +44,8 @@ public class BookData {
 
         let matches =
             search.isEmpty
-            ? userData
-            : userData.filter {
+            ? books
+            : books.filter {
                 scope
                     .searchText(for: $0)
                     .localizedStandardContains(search)
@@ -57,10 +57,10 @@ public class BookData {
     public func filterValues(search: String, author: String) {
 
         if search.isEmpty && author.isEmpty {
-            filteredItems = userData.sorted(by: { $0.title < $1.title })
+            filteredItems = books.sorted(by: { $0.title < $1.title })
         } else {
 
-            let list = userData.filter({ item in
+            let list = books.filter({ item in
 
                 guard author.isEmpty || author == item.author else {
                     return false
@@ -85,7 +85,7 @@ public class BookData {
 
     private init() {
 
-        userData = [
+        books = [
 
             Book(
                 title: "Apple Intelligence for Masterminds",

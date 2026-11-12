@@ -49,7 +49,7 @@ public struct BookView: View {
 
 #Preview {
 
-    @Previewable @State var book: Book = BookData.shared.userData
+    @Previewable @State var book: Book = BookData.shared.books
         .first!
 
     BookView(book: book)

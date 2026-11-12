@@ -36,14 +36,14 @@ struct SwiftUI_5_33_View: View {
             .navigationDestination(
                 for: Book.self,
                 destination: { book in
-                    DetailBookView2(viewPath: $viewPath, book: book)
+                    DetailBookView(viewPath: $viewPath, book: book)
                 }
             )
             .navigationDestination(
                 for: String.self,
                 destination: { viewID in
                     if viewID == "Settings View" {
-                        SettingsView2(viewPath: $viewPath)
+                        SettingsView(viewPath: $viewPath)
                     }
                 }
             )

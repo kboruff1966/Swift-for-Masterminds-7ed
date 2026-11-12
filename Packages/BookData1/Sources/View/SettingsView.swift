@@ -9,12 +9,18 @@ import SwiftUI
 
 public struct SettingsView: View {
 
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) private var dismiss
+
+    /// Optional path binding. If provided, Back pops the path directly;
+    /// otherwise the view falls back to the environment's dismiss action.
+    private var viewPath: Binding<NavigationPath>?
 
     @State private var showPictures = true
     @State private var showYear = true
-    
-    public init() {}
+
+    public init(viewPath: Binding<NavigationPath>? = nil) {
+        self.viewPath = viewPath
+    }
 
     public var body: some View {
         Form {
@@ -26,7 +32,11 @@ public struct SettingsView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Back") {
-                    dismiss()
+                    if let viewPath, !viewPath.wrappedValue.isEmpty {
+                        viewPath.wrappedValue.removeLast()
+                    } else {
+                        dismiss()
+                    }
                 }
             }
         }

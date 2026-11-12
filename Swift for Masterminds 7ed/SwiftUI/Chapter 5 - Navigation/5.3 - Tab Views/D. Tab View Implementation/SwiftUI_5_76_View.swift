@@ -31,7 +31,7 @@ struct SwiftUI_5_76_View: View {
         @Environment(BookData.self) private var appData
 
         var body: some View {
-            List(appData.userData) { book in
+            List(appData.books) { book in
                 BookView(book: book)
             }
         }

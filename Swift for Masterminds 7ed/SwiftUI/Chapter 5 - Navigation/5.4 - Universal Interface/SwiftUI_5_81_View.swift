@@ -5,15 +5,15 @@
 //  Created by Keith Boruff on 11/4/26.
 //
 
+import BookData1
 import SwiftUI
-import BookData2
 
 /// Listing 5-81: Defining a two-column split view
 struct SwiftUI_5_81_View: View {
 
     @Environment(BookData.self) private var appData
 
-    @State private var selectedBook: BookData2.Book?
+    @State private var selectedBook: Book?
     @State private var visibility: NavigationSplitViewVisibility = .automatic
 
     var body: some View {
@@ -24,7 +24,7 @@ struct SwiftUI_5_81_View: View {
             },
             detail: {
                 if let selectedBook {
-                    DetailView(book: selectedBook)
+                    DetailBookView(book: selectedBook)
                 } else {
                     ContentUnavailableView {
                         Label("No Book", systemImage: "book.fill")
@@ -35,17 +35,17 @@ struct SwiftUI_5_81_View: View {
             }
         )
         .onAppear {
-            selectedBook = appData.userData.first
+            selectedBook = appData.books.first
         }
     }
 
     struct BooksView: View {
 
         @Environment(BookData.self) private var appData
-        @Binding var selectedBook: BookData2.Book?
+        @Binding var selectedBook: Book?
 
         var body: some View {
-            List(appData.userData, selection: $selectedBook) { book in
+            List(appData.books, selection: $selectedBook) { book in
                 NavigationLink(
                     value: book,
                     label: { Text(book.title) }
@@ -56,9 +56,9 @@ struct SwiftUI_5_81_View: View {
         }
     }
 
-    struct DetailView: View {
+    struct DetailBookView: View {
 
-        let book: BookData2.Book
+        let book: Book
 
         var body: some View {
             VStack {
@@ -67,7 +67,10 @@ struct SwiftUI_5_81_View: View {
                 Text(book.author)
                 Text(book.displayYear)
                     .font(.caption)
-                Image(book.cover).resizable().scaledToFit().frame(maxWidth: 300)
+                Image(book.cover)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: 300)
                 Spacer()
             }
             .padding()

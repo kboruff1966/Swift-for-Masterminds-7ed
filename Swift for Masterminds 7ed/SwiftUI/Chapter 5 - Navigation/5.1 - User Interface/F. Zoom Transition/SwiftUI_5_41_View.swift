@@ -5,13 +5,11 @@
 //  Created by Keith Boruff on 10/22/26.
 //
 
-import SwiftUI
 import BookData3
+import SwiftUI
 
 /// Listing 5-38: Opening a view with a zoom transition
 struct SwiftUI_5_41_View: View {
-    
-    typealias CellBook = BookData3.BookView
 
     @Environment(BookData.self) private var appData
     @Namespace var zoomBooks
@@ -25,7 +23,7 @@ struct SwiftUI_5_41_View: View {
                 NavigationLink(
                     value: book,
                     label: {
-                        CellBook(book: book)
+                        BookView(book: book)
                             .matchedTransitionSource(
                                 id: book.id,
                                 in: zoomBooks
