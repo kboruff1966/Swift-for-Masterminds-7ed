@@ -5,13 +5,11 @@
 //  Created by Keith Boruff on 10/28/26.
 //
 
-import SwiftUI
 import BookData1
+import SwiftUI
 
 /// Listing 4-26: Configuring the section separators
 struct SwiftUI_4_26_View: View {
-    
-    typealias CellBook = BookData1.BookView
 
     @Environment(BookData.self) private var appData
 
@@ -29,7 +27,7 @@ struct SwiftUI_4_26_View: View {
 
             Section(header: Text("My Books")) {
                 ForEach(appData.books) { book in
-                    CellBook(book: book)
+                    BookView(book: book)
                 }
             }
             .listSectionSeparator(.hidden)

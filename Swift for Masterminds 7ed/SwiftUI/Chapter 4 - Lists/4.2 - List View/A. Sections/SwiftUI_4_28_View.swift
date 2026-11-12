@@ -11,10 +11,6 @@ import SwiftUI
 /// Listing 4-28: Providing an ordered list of values
 struct SwiftUI_4_28_View: View {
 
-    /// Shadows the app target's own `Book` model within this view (and its nested types)
-    typealias Book = BookData1.Book
-    typealias CellBook = BookData1.BookView
-
     @Environment(BookData.self) private var appData
 
     var orderList: [(key: String, value: [Book])] {
@@ -36,7 +32,7 @@ struct SwiftUI_4_28_View: View {
             ForEach(orderList, id: \.key) { section in
                 Section {
                     ForEach(section.value) { book in
-                        CellBook(book: book)
+                        BookView(book: book)
                     }
                 } header: {
                     Text(section.key)
