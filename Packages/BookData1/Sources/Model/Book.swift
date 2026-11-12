@@ -21,6 +21,7 @@ public struct Book: Identifiable, Hashable {
         return String(year)
     }
 
+    
     public init(
         title: String,
         author: String,

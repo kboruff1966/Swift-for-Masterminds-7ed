@@ -14,6 +14,7 @@ struct Employee: Identifiable {
     var name: String
     var position: String
     var subordinates: [Employee]
+    
 }
 
 @Observable class EmployeesData {
