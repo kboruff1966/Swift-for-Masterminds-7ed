@@ -41,7 +41,7 @@ struct SwiftUI_7_45_View: View {
             .navigationTitle("Books")
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     Button(
                         action: {
                             appData.selectedBook = nil

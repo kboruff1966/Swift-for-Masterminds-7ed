@@ -34,7 +34,7 @@ struct SwiftUI_5_41_View: View {
             .navigationTitle(Text("Books"))
             .toolbarTitleDisplayMode(.inlineLarge)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     NavigationLink(
                         value: "Settings View",
                         label: { Image(systemName: "gear") }
@@ -45,9 +45,11 @@ struct SwiftUI_5_41_View: View {
                 for: BookData3.Book.self,
                 destination: { book in
                     DetailBookView(book: book)
+                        #if os(iOS)
                         .navigationTransition(
                             .zoom(sourceID: book.id, in: zoomBooks)
                         )
+                        #endif
                 }
             )
             .navigationDestination(

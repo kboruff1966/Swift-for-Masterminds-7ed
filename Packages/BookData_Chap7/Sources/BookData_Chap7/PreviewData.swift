@@ -86,18 +86,18 @@ public struct PreviewData: PreviewModifier {
         }
 
         // Load covers from this package's asset catalog (Bundle.module), not the app's main bundle
-        let book1 = UIImage(named: "book1", in: .module, with: nil)?.pngData()
-        let book2 = UIImage(named: "book2", in: .module, with: nil)?.pngData()
-        let book3 = UIImage(named: "book3", in: .module, with: nil)?.pngData()
-        let book4 = UIImage(named: "book4", in: .module, with: nil)?.pngData()
-        let book5 = UIImage(named: "book5", in: .module, with: nil)?.pngData()
-        let book6 = UIImage(named: "book6", in: .module, with: nil)?.pngData()
-        let book7 = UIImage(named: "book7", in: .module, with: nil)?.pngData()
-        let book8 = UIImage(named: "book8", in: .module, with: nil)?.pngData()
-        let book9 = UIImage(named: "book9", in: .module, with: nil)?.pngData()
-        let book10 = UIImage(named: "book10", in: .module, with: nil)?.pngData()
-        let book11 = UIImage(named: "book11", in: .module, with: nil)?.pngData()
-        let book12 = UIImage(named: "book12", in: .module, with: nil)?.pngData()
+        let book1 = PlatformImage.pngData(named: "book1")
+        let book2 = PlatformImage.pngData(named: "book2")
+        let book3 = PlatformImage.pngData(named: "book3")
+        let book4 = PlatformImage.pngData(named: "book4")
+        let book5 = PlatformImage.pngData(named: "book5")
+        let book6 = PlatformImage.pngData(named: "book6")
+        let book7 = PlatformImage.pngData(named: "book7")
+        let book8 = PlatformImage.pngData(named: "book8")
+        let book9 = PlatformImage.pngData(named: "book9")
+        let book10 = PlatformImage.pngData(named: "book10")
+        let book11 = PlatformImage.pngData(named: "book11")
+        let book12 = PlatformImage.pngData(named: "book12")
 
         let books = [
             Book(

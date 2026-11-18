@@ -18,7 +18,7 @@ public struct BookView: View {
 
     public var body: some View {
         HStack(alignment: .top) {
-            Image(uiImage: book.displayCover)
+            book.displayCover
                 .resizable()
                 .scaledToFit()
                 .frame(width: 80, height: 100)

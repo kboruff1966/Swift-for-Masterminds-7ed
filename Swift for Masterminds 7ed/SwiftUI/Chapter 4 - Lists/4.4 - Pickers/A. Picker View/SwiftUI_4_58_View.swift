@@ -7,15 +7,18 @@
 
 import SwiftUI
 
-/// Listing 4-58: Implementing a segmented picker
+// Listing 4-58: Implementing a segmented picker
 struct SwiftUI_4_58_View: View {
 
-    @State private var selectedValue: String = "No Value"
+    // Start with a value that matches a picker tag; macOS's pop-up picker
+    // has no matching menu item for a value outside the list.
+    @State private var selectedValue: String = "Paris"
+    
     let listCities: [String] = [
-        "Paris", "Toronto", "Dublin", "Tokyo",
-        "Sydney", "Berlin", "Madrid", "Rome",
-        "Cairo", "Mumbai", "Lisbon", "Seoul",
-        "Detroit",
+        "Berlin", "Cairo", "Detroit", "Dublin",
+        "Lisbon", "Madrid", "Mumbai", "Paris",
+        "Rome", "Seoul", "Sydney", "Tokyo",
+        "Toronto",
     ]
 
     var body: some View {
@@ -26,14 +29,16 @@ struct SwiftUI_4_58_View: View {
                     Text(value)
                 }
             }
+            #if os(iOS)
             .pickerStyle(.wheel)
+            #endif
             //            .pickerStyle(.segmented)
 
             Spacer()
         }
         .padding()
         .onAppear {
-            selectedValue = listCities.randomElement()!
+            selectedValue = listCities.randomElement() ?? selectedValue
         }
     }
 }

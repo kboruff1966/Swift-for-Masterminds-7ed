@@ -15,9 +15,11 @@ struct SwiftUI_4_35_View: View {
     @State private var selectedRows: Set<Book.ID> = []
     @State private var editActive = false
 
+    #if os(iOS)
     var editMode: EditMode {
         editActive ? .active : .inactive
     }
+    #endif
 
     var editButtonText: String {
         editActive ? "Done" : "Edit"
@@ -75,7 +77,9 @@ struct SwiftUI_4_35_View: View {
                     }
                 }
             }
+            #if os(iOS)
             .environment(\.editMode, .constant(editMode))
+            #endif
         }
     }
 

@@ -29,7 +29,9 @@ public struct AddBookView: View {
 
             TextField("Insert Year", text: $yearInput)
                 .textFieldStyle(.roundedBorder)
+                #if os(iOS)
                 .keyboardType(.numbersAndPunctuation)
+                #endif
 
             HStack {
 
@@ -80,7 +82,7 @@ public struct AddBookView: View {
 
             } else {
 
-                let cover = UIImage(named: "nocover")?.pngData()
+                let cover = PlatformImage.pngData(named: "nocover", in: .main)
 
                 let newBook = Book(
                     title: title,

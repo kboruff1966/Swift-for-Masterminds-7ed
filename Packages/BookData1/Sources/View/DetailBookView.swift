@@ -41,7 +41,7 @@ public struct DetailBookView: View {
         .navigationBarBackButtonHidden(viewPath != nil)
         .toolbar {
             if let viewPath {
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .navigation) {
                     Button("Back") {
                         if !viewPath.wrappedValue.isEmpty {
                             viewPath.wrappedValue.removeLast()

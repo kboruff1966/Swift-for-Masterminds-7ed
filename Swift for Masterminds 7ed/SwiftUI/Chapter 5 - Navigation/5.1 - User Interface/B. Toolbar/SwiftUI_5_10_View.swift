@@ -74,6 +74,7 @@ struct SwiftUI_5_10_View: View {
 
                 /// Listing 5-11: Displaying a toolbar item on the trailing side
                 case .Listing_5_11:
+                    #if os(iOS)
                     ToolbarItem(placement: .topBarPinnedTrailing) {
                         Button(
                             "Shop",
@@ -82,6 +83,16 @@ struct SwiftUI_5_10_View: View {
                         )
                     }
                     .visibilityPriority(.high)
+                    #else
+                    ToolbarItem(placement: .primaryAction) {
+                        Button(
+                            "Shop",
+                            systemImage: "cart",
+                            action: { print("Shop") }
+                        )
+                    }
+                    .visibilityPriority(.high)
+                    #endif
 
                 }
 

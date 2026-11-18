@@ -31,13 +31,13 @@ struct SwiftUI_3_24_View: View {
             TextField("Insert Name", text: $nameInput)
                 .textFieldStyle(.roundedBorder)
                 .padding(4)
-                .background(focusName == .name ? Color(white: 0.9) : .white)
+                .background(focusName == .name ? Color.blue : .white)
                 .focused($focusName, equals: .name)
 
             TextField("Insert Surname", text: $surnameInput)
                 .textFieldStyle(.roundedBorder)
                 .padding(4)
-                .background(focusName == .surname ? Color(white: 0.9) : .white)
+                .background(focusName == .surname ? Color.blue : .white)
                 .focused($focusName, equals: .surname)
 
             HStack {

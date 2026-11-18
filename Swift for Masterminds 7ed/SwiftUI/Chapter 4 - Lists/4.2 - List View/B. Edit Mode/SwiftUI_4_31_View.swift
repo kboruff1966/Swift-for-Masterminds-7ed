@@ -13,22 +13,65 @@ struct SwiftUI_4_31_View: View {
 
     @Environment(BookData.self) private var appData
 
+    #if os(macOS)
+        @State private var selection = Set<Book.ID>()
+    #endif
+
     var body: some View {
         VStack {
-            EditButton()
+            #if os(iOS)
+                EditButton()
+                    .buttonStyle(.glassProminent)
+            #elseif os(macOS)
+                // macOS has no EditButton/EditMode; delete the selected rows instead
+                Button("Delete", systemImage: "trash", role: .destructive) {
+                    deleteSelected()
+                }
                 .buttonStyle(.glassProminent)
-            List {
-                ForEach(appData.books) { book in
-                    BookView(book: book)
+                .disabled(selection.isEmpty)
+            #endif
+
+            #if os(macOS)
+                List(selection: $selection) {
+                    ForEach(appData.books) { book in
+                        BookView(book: book)
+                    }
+                    .onDelete { indexes in
+                        appData.books.remove(atOffsets: indexes)
+                    }
                 }
-                .onDelete { indexes in
-                    appData.books.remove(atOffsets: indexes)
+                .listStyle(.plain)
+                // Delete key / Edit ▸ Delete menu item
+                .onDeleteCommand {
+                    deleteSelected()
                 }
-            }
-            .listStyle(.plain)
+                // Right-click menu on a row (or on the current selection)
+                .contextMenu(forSelectionType: Book.ID.self) { ids in
+                    Button("Delete", role: .destructive) {
+                        appData.books.removeAll { ids.contains($0.id) }
+                        selection.subtract(ids)
+                    }
+                }
+            #else
+                List {
+                    ForEach(appData.books) { book in
+                        BookView(book: book)
+                    }
+                    .onDelete { indexes in
+                        appData.books.remove(atOffsets: indexes)
+                    }
+                }
+                .listStyle(.plain)
+            #endif
         }
     }
 
+    #if os(macOS)
+        private func deleteSelected() {
+            appData.books.removeAll { selection.contains($0.id) }
+            selection.removeAll()
+        }
+    #endif
 }
 
 #Preview {

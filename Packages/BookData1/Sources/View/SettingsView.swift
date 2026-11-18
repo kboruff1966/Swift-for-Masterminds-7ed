@@ -30,7 +30,7 @@ public struct SettingsView: View {
         .navigationTitle("Settings")
         .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
+            ToolbarItem(placement: .navigation) {
                 Button("Back") {
                     if let viewPath, !viewPath.wrappedValue.isEmpty {
                         viewPath.wrappedValue.removeLast()

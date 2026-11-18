@@ -8,6 +8,39 @@
 import SwiftData
 import SwiftUI
 
+#if os(macOS)
+    import AppKit
+    public typealias PlatformImage = NSImage
+#else
+    import UIKit
+    public typealias PlatformImage = UIImage
+#endif
+
+extension Image {
+    init(platformImage: PlatformImage) {
+        #if os(macOS)
+            self.init(nsImage: platformImage)
+        #else
+            self.init(uiImage: platformImage)
+        #endif
+    }
+}
+
+extension PlatformImage {
+    /// Loads a named image from an asset catalog and returns it as PNG data on either platform.
+    static func pngData(named name: String, in bundle: Bundle = .module) -> Data? {
+        #if os(macOS)
+            guard let image = bundle.image(forResource: name),
+                let tiff = image.tiffRepresentation,
+                let bitmap = NSBitmapImageRep(data: tiff)
+            else { return nil }
+            return bitmap.representation(using: .png, properties: [:])
+        #else
+            return UIImage(named: name, in: bundle, with: nil)?.pngData()
+        #endif
+    }
+}
+
 @Model
 public class Book: Identifiable {
 
@@ -16,7 +49,7 @@ public class Book: Identifiable {
 
     @Attribute(.unique)
     public var id: UUID = UUID()
-    
+
     public var title = "" {
         didSet {
             sectionLetter = title.prefix(1).uppercased()
@@ -47,11 +80,11 @@ public class Book: Identifiable {
         year > 0 ? String(year) : "Undefined"
     }
 
-    public var displayCover: UIImage {
-        if let data = cover, let image = UIImage(data: data) {
-            return image
+    public var displayCover: Image {
+        if let data = cover, let image = PlatformImage(data: data) {
+            return Image(platformImage: image)
         } else {
-            return UIImage(named: "nocover")!
+            return Image("nocover", bundle: .module)
         }
     }
 

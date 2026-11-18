@@ -21,7 +21,9 @@ struct SwiftUI_5_68_View: View {
                 Text("Settings")
             }
         }
+        #if os(iOS)
         .tabBarMinimizeBehavior(.onScrollDown)
+        #endif
     }
 
 }

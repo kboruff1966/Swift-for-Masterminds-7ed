@@ -25,8 +25,10 @@ struct SwiftUI_5_71_View: View {
                     .ignoresSafeArea(.all)
             }
         }
+        #if os(iOS)
         .tabViewStyle(.page)
         .indexViewStyle(.page(backgroundDisplayMode: .always))
+        #endif
         .ignoresSafeArea(.all)
     }
 

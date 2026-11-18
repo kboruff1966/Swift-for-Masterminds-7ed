@@ -49,7 +49,9 @@ public struct AddBookView: View {
                 .textFieldStyle(.roundedBorder)
             TextField("Insert Year", text: $yearInput)
                 .textFieldStyle(.roundedBorder)
+                #if os(iOS)
                 .keyboardType(.numbersAndPunctuation)
+                #endif
             Spacer()
         }
         .padding()

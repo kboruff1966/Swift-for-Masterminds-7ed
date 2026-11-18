@@ -15,8 +15,10 @@ struct SwiftUI_4_32_View: View {
 
     var body: some View {
         VStack {
+            #if os(iOS)
             EditButton()
                 .buttonStyle(.glassProminent)
+            #endif
             List {
                 ForEach(appData.books) { book in
                     BookView(book: book)

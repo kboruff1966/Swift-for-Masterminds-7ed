@@ -22,7 +22,7 @@ struct SwiftUI_5_42_View: View {
             .navigationTitle(Text("Books"))
             .toolbarTitleDisplayMode(.inlineLarge)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     Button(
                         "Add Book",
                         systemImage: "plus",

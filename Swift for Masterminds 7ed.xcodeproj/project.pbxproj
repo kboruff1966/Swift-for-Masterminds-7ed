@@ -26,9 +26,23 @@
 		FAFAAAC530A2525200160457 /* MyLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MyLibrary; path = Packages/MyLibrary; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FA89647630A9A66400A14F5A /* Exceptions for "Swift for Masterminds 7ed" folder in "Swift for Masterminds 7ed" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			platformFiltersByRelativePath = {
+				"SwiftUI/Chapter 6 - Multiplatform Applications/6.2 Platform Specific Tools/B. Conditional Code/MacDetailView.swift" = (macos, );
+				"SwiftUI/Chapter 6 - Multiplatform Applications/6.2 Platform Specific Tools/B. Conditional Code/MobileDetailView.swift" = (ios, );
+			};
+			target = FA38EA23305A8F0E00D32B4E /* Swift for Masterminds 7ed */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FA38EA26305A8F0E00D32B4E /* Swift for Masterminds 7ed */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FA89647630A9A66400A14F5A /* Exceptions for "Swift for Masterminds 7ed" folder in "Swift for Masterminds 7ed" target */,
+			);
 			path = "Swift for Masterminds 7ed";
 			sourceTree = "<group>";
 		};

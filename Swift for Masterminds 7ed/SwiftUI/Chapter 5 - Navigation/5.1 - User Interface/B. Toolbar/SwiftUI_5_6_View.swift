@@ -19,6 +19,7 @@ struct SwiftUI_5_6_View: View {
                 BookView(book: book)
             }
             .navigationTitle(Text("Books"))
+            #if os(iOS)
             .toolbar(.hidden, for: .navigationBar)
             .toolbar {
                 ToolbarSpacer(.flexible, placement: .bottomBar)
@@ -28,6 +29,7 @@ struct SwiftUI_5_6_View: View {
                     }
                 }
             }
+            #endif
 
         }
     }

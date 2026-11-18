@@ -25,7 +25,9 @@ struct SwiftUI_5_17_View: View {
                 placement: .automatic,
                 prompt: Text("Insert title")
             )
+            #if os(iOS)
             .searchToolbarBehavior(.minimize)
+            #endif
         }
 
         .onChange(of: searchTerm, initial: false) { old, value in

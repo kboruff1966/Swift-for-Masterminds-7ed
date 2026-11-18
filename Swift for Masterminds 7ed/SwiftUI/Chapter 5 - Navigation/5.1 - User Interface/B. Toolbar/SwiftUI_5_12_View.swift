@@ -35,6 +35,7 @@ struct SwiftUI_5_12_View: View {
                     )
                 }
 
+                #if os(iOS)
                 ToolbarOverflowMenu {
                     Button(
                         "Shop",
@@ -54,6 +55,7 @@ struct SwiftUI_5_12_View: View {
                         action: { print("Beach") }
                     )
                 }
+                #endif
             }
         }
     }

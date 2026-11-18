@@ -39,7 +39,7 @@ public struct DetailBookView: View {
         .navigationTitle(Text("Book"))
         .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
+            ToolbarItem(placement: .navigation) {
                 Button("Back") {
                     appData.viewPath.removeLast()
                 }

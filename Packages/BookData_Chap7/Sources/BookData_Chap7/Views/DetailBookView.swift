@@ -22,7 +22,7 @@ public struct DetailBookView: View {
             Text(book.title)
                 .font(.title)
             
-            Image(uiImage: book.displayCover)
+            book.displayCover
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100)
@@ -36,7 +36,7 @@ public struct DetailBookView: View {
         .padding()
         .navigationTitle(Text("Book"))
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .primaryAction) {
                 Button(
                     "Add Book",
                     systemImage: "pencil.circle",

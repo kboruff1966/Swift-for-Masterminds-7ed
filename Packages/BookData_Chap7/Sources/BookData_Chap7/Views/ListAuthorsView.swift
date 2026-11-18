@@ -29,7 +29,7 @@ public struct ListAuthorsView: View {
             appData.viewPath.removeLast()
         }
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .primaryAction) {
                 NavigationLink(
                     value: "Add Author",
                     label: { Image(systemName: "plus") }

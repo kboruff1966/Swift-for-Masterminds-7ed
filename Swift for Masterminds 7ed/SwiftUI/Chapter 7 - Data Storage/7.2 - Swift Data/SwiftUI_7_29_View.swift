@@ -29,7 +29,7 @@ struct SwiftUI_7_29_View: View {
                 .navigationTitle("Books")
                 .toolbarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
+                    ToolbarItem(placement: .primaryAction) {
                         Button(
                             "Sort",
                             systemImage: "gear",
@@ -41,8 +41,8 @@ struct SwiftUI_7_29_View: View {
                             }
                         )
                     }
-                    ToolbarSpacer(placement: .topBarTrailing)
-                    ToolbarItem(placement: .topBarTrailing) {
+                    ToolbarSpacer(placement: .primaryAction)
+                    ToolbarItem(placement: .primaryAction) {
                         NavigationLink(
                             value: "Add Book",
                             label: {

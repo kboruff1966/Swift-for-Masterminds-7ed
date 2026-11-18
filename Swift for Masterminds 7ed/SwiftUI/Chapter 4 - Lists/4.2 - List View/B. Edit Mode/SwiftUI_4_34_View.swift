@@ -20,8 +20,10 @@ struct SwiftUI_4_34_View: View {
             List(selection: $selectedRows) {
                 HStack {
 
+                    #if os(iOS)
                     EditButton()
                         .buttonStyle(.glassProminent)
+                    #endif
 
                     Spacer()
                     Button(

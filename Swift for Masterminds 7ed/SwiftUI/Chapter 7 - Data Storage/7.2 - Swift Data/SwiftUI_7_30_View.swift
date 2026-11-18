@@ -27,7 +27,7 @@ struct SwiftUI_7_30_View: View {
                 .navigationTitle("Books")
                 .toolbarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
+                    ToolbarItem(placement: .primaryAction) {
                         NavigationLink(
                             value: "Add Book",
                             label: { Image(systemName: "plus") }
