@@ -79,6 +79,76 @@ public class ConsumableItemData {
             calories: 466,
             included: false
         ),
+
+        ConsumableItem(
+            name: "Milk",
+            category: .dairy,
+            calories: 42,
+            included: false
+        ),
+
+        ConsumableItem(
+            name: "Yogurt",
+            category: .dairy,
+            calories: 59,
+            included: false
+        ),
+
+        ConsumableItem(
+            name: "Ice Cream",
+            category: .dairy,
+            calories: 207,
+            included: false
+        ),
+
+        ConsumableItem(
+            name: "Croissants",
+            category: .baked,
+            calories: 406,
+            included: false
+        ),
+
+        ConsumableItem(
+            name: "Muffins",
+            category: .baked,
+            calories: 377,
+            included: false
+        ),
+
+        ConsumableItem(
+            name: "Bread",
+            category: .baked,
+            calories: 265,
+            included: false
+        ),
+
+        ConsumableItem(
+            name: "Donuts",
+            category: .baked,
+            calories: 452,
+            included: false
+        ),
+
+        ConsumableItem(
+            name: "Coffee",
+            category: .beverages,
+            calories: 2,
+            included: false
+        ),
+
+        ConsumableItem(
+            name: "Tea",
+            category: .beverages,
+            calories: 1,
+            included: false
+        ),
+
+        ConsumableItem(
+            name: "Soda",
+            category: .beverages,
+            calories: 41,
+            included: false
+        ),
     ]
 
     public static let shared: ConsumableItemData = ConsumableItemData()
