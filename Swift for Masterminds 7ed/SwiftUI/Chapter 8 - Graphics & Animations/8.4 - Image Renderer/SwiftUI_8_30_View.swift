@@ -9,7 +9,11 @@ import SwiftUI
 
 struct SwiftUI_8_30_View: View {
 
+    #if canImport(UIKit)
     @State private var pattern: UIImage?
+    #else
+    @State private var pattern: NSImage?
+    #endif
     let newPicture = NewPictureView()
 
     var body: some View {
@@ -20,14 +24,24 @@ struct SwiftUI_8_30_View: View {
             Button("Export Image") {
                 
                 let renderer = ImageRenderer(content: newPicture)
+                #if canImport(UIKit)
                 if let image = renderer.uiImage { pattern = image }
+                #else
+                if let image = renderer.nsImage { pattern = image }
+                #endif
             }
             .buttonStyle(.glassProminent)
 
             if let pattern {
+                #if canImport(UIKit)
                 Image(uiImage: pattern)
                     .resizable(resizingMode: .tile)
                     .frame(width: 300, height: 200)
+                #else
+                Image(nsImage: pattern)
+                    .resizable(resizingMode: .tile)
+                    .frame(width: 300, height: 200)
+                #endif
             }
 
             Spacer()
